@@ -46,7 +46,7 @@ export function ImagePreview({ processedImage }: ImagePreviewProps) {
 
   return (
     <div className="max-w-5xl mx-auto space-y-6">
-      <div className="relative aspect-video overflow-hidden rounded-sm border border-dashed border-blue-100 hover:border-blue-200 transition-colors duration-200 shadow">
+      <div className="relative aspect-video overflow-hidden rounded-2xl border border-dashed border-blue-100 hover:border-blue-200 transition-colors duration-200 shadow">
         {processedImage ? (
           <img
             src={processedImage}

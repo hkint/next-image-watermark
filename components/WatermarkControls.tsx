@@ -20,6 +20,7 @@ import {
 } from '@/components/ui/select';
 import { ColorPicker } from './ColorPicker';
 import { WatermarkPosition } from '@/types/watermark';
+import WatermarkText from './WatermarkText';
 // import { Info } from 'lucide-react';
 
 interface WatermarkControlsProps {
@@ -111,6 +112,7 @@ const POSITION_OPTIONS = [
   },
 ];
 
+
 export function WatermarkControls({
   watermark,
   position,
@@ -143,37 +145,20 @@ export function WatermarkControls({
       <CardContent className="p-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Watermark Text */}
-          <div className="space-y-3">
-            <div className="flex items-center justify-between">
-              <Label htmlFor="watermark" className="text-gray-700 font-medium">
-                Watermark Text
-              </Label>
-              {/* <Info
-              className="size-4 text-gray-400"
-              aria-label="Enter the text you want to display as watermark"
-            /> */}
-            </div>
-            <Input
-              id="watermark"
-              name="watermark"
-              placeholder="Enter watermark text, e.g., Copyright"
-              value={watermark}
-              onChange={onWatermarkChange}
-              className="h-12 text-lg border-gray-200 focus:border-blue-300 transition-colors duration-200"
-              aria-label="Watermark text input"
-            />
-          </div>
+          <WatermarkText
+            watermark={watermark}
+            onWatermarkChange={onWatermarkChange}
+          />
 
           {/* Color Picker */}
           <div className="space-y-3">
-            <Label className="text-gray-700 font-medium block">
+            <Label className="text-gray-700 font-medium">
               Watermark Color
             </Label>
             <ColorPicker
               value={color}
               onChange={onColorChange}
               aria-label="Watermark color picker"
-              className="w-full"
             />
           </div>
 
@@ -185,7 +170,7 @@ export function WatermarkControls({
                 <SelectValue>
                   {font
                     ? FONT_OPTIONS.find((option) => option.value === font)
-                        ?.label
+                      ?.label
                     : 'Choose a font style'}
                 </SelectValue>
               </SelectTrigger>
@@ -217,8 +202,8 @@ export function WatermarkControls({
                 <SelectValue>
                   {position
                     ? POSITION_OPTIONS.find(
-                        (option) => option.value === position
-                      )?.label
+                      (option) => option.value === position
+                    )?.label
                     : 'Choose a watermark position'}
                 </SelectValue>
               </SelectTrigger>
@@ -244,9 +229,7 @@ export function WatermarkControls({
           {/* Grid Size / Number of Watermarks */}
           <div className="space-y-3">
             <Label className="text-gray-700 font-medium">
-              {position === 'tile'
-                ? `Grid Size: ${watermarkGrid} × ${watermarkGrid}`
-                : `Number of Watermarks: ${watermarkGrid}`}
+              Grid Size: {watermarkGrid} × {watermarkGrid}
             </Label>
             <Slider
               value={watermarkGrid}

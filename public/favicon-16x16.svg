@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <!-- Background -->
+  <rect width="16" height="16" fill="#60a5fa" rx="3"/>
+  
+  <!-- Image Frame -->
+  <rect x="3" y="3" width="10" height="10" fill="white" rx="1"/>
+  
+  <!-- Simplified Image -->
+  <path d="M3 10 L6 7 L9 10 L13 6 L13 13 L3 13 Z" fill="#93c5fd"/>
+  
+  <!-- Diagonal Line (representing watermark) -->
+  <line x1="3" y1="3" x2="13" y2="13" stroke="#3b82f6" stroke-width="0.75" opacity="0.4"/>
+</svg>

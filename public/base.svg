@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#60a5fa" rx="64"/>
+  
+  <!-- Image Frame -->
+  <rect x="96" y="96" width="320" height="320" fill="white" rx="24"/>
+  <rect x="116" y="116" width="280" height="280" fill="#f0f9ff" rx="16"/>
+  
+  <!-- Mountain Scene (representing image) -->
+  <path d="M116 316 L216 216 L316 316 L396 236 L396 396 L116 396 Z" fill="#93c5fd"/>
+  <circle cx="176" cy="176" r="24" fill="#93c5fd"/>
+  
+  <!-- Diagonal Watermark Text -->
+  <g transform="translate(256 256)">
+    <g transform="rotate(-45)">
+      <text x="0" y="0" 
+            font-family="Arial, sans-serif" 
+            font-size="72" 
+            fill="#3b82f6"
+            text-anchor="middle"
+            dominant-baseline="middle"
+            opacity="0.4"
+            style="font-weight: bold;">
+        WATERMARK
+      </text>
+    </g>
+  </g>
+</svg>

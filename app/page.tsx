@@ -52,9 +52,21 @@ export default function Home() {
 
       const addWatermark = (x: number, y: number, rotation: number) => {
         ctx.save();
-        ctx.translate(x, y);
+        // ctx.translate(x, y);
+        // ctx.rotate((rotation * Math.PI) / 180);
+        // ctx.fillText(watermark, 0, 0);
+
+        // 获取文本的宽度和高度
+        const textWidth = ctx.measureText(watermark).width;
+        const textHeight = parseInt(ctx.font, 10); // TODO 假设字体的高度等于字体大小，后续优化
+
+        // 将原点移动到文字中心
+        ctx.translate(x + textWidth / 2, y + textHeight / 2);
         ctx.rotate((rotation * Math.PI) / 180);
-        ctx.fillText(watermark, 0, 0);
+        
+        // 绘制文字，位置为 (-textWidth/2, -textHeight/2) 以中心为基准
+        ctx.fillText(watermark, -textWidth / 2, textHeight / 2);
+
         ctx.restore();
       };
 
