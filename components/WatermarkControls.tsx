@@ -1,27 +1,61 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import { Slider } from '@/components/ui/slider';
+import React, { useState, useEffect } from "react";
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
 import {
   Card,
   CardHeader,
   CardTitle,
   CardDescription,
   CardContent,
-} from '@/components/ui/card';
+} from "@/components/ui/card";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { ColorPicker } from './ColorPicker';
-import { WatermarkPosition } from '@/types/watermark';
-import WatermarkText from './WatermarkText';
-// import { Info } from 'lucide-react';
+} from "@/components/ui/select";
+import { ColorPicker } from "./ColorPicker";
+import { WatermarkPosition } from "@/types/watermark";
+import WatermarkText from "./WatermarkText";
+import { NumberInput } from "./NumberInput";
+import { Button } from "@/components/ui/button";
+import { Link, Unlink } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
+interface FontOption {
+  value: string;
+  label: string;
+  description?: string;
+}
+
+const DEFAULT_FONTS: FontOption[] = [
+  // 英文字体
+  { value: "Arial", label: "Arial", description: "Sans-serif" },
+  { value: "Times New Roman", label: "Times New Roman", description: "Serif" },
+  { value: "Helvetica", label: "Helvetica", description: "Sans-serif" },
+  { value: "Georgia", label: "Georgia", description: "Serif" },
+  { value: "Verdana", label: "Verdana", description: "Sans-serif" },
+  // 中文字体
+  { value: "Microsoft YaHei", label: "微软雅黑", description: "Sans-serif" },
+  { value: "SimSun", label: "宋体", description: "Serif" },
+  { value: "SimHei", label: "黑体", description: "Sans-serif" },
+  { value: "KaiTi", label: "楷体", description: "Serif" },
+  { value: "NSimSun", label: "新宋体", description: "Serif" },
+  // macOS 中文字体
+  { value: "PingFang SC", label: "苹方", description: "Sans-serif" },
+  { value: "STHeiti", label: "华文黑体", description: "Sans-serif" },
+  { value: "STKaiti", label: "华文楷体", description: "Serif" },
+  { value: "STSong", label: "华文宋体", description: "Serif" },
+  { value: "STFangsong", label: "华文仿宋", description: "Serif" },
+];
 
 interface WatermarkControlsProps {
   watermark: string;
@@ -30,7 +64,8 @@ interface WatermarkControlsProps {
   fontSize: number[];
   opacity: number[];
   rotation: number[];
-  watermarkGrid: number[];
+  watermarkGridX: number;
+  watermarkGridY: number;
   font: string;
   onWatermarkChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onPositionChange: (value: WatermarkPosition) => void;
@@ -38,89 +73,63 @@ interface WatermarkControlsProps {
   onFontSizeChange: (value: number[]) => void;
   onOpacityChange: (value: number[]) => void;
   onRotationChange: (value: number[]) => void;
-  onWatermarkGridChange: (value: number[]) => void;
+  onWatermarkGridXChange: (value: number) => void;
+  onWatermarkGridYChange: (value: number) => void;
   onFontChange: (value: string) => void;
 }
 
-const FONT_OPTIONS = [
-  { value: 'Inter', label: 'Inter', description: 'Modern sans-serif font' },
-  { value: 'Arial', label: 'Arial', description: 'Classic sans-serif font' },
-  { value: 'Georgia', label: 'Georgia', description: 'Elegant serif font' },
-  {
-    value: 'Times New Roman',
-    label: 'Times New Roman',
-    description: 'Traditional serif font',
-  },
-  { value: 'Verdana', label: 'Verdana', description: 'Highly readable font' },
-  {
-    value: 'Helvetica',
-    label: 'Helvetica',
-    description: 'Professional design font',
-  },
-  {
-    value: 'Courier New',
-    label: 'Courier New',
-    description: 'Monospace coding font',
-  },
-  {
-    value: 'Trebuchet MS',
-    label: 'Trebuchet MS',
-    description: 'Web-friendly font',
-  },
-];
-
 const POSITION_OPTIONS = [
   {
-    value: 'tile',
-    label: 'Tile Pattern',
-    description: 'Evenly distribute watermarks across the image',
+    value: "tile",
+    label: "Tile Pattern",
+    description: "Evenly distribute watermarks across the image",
   },
   {
-    value: 'center',
-    label: 'Center',
-    description: 'Place watermark in the middle of the image',
+    value: "center",
+    label: "Center",
+    description: "Place watermark in the middle of the image",
   },
   {
-    value: 'topCenter',
-    label: 'Top Center',
-    description: 'Align watermark to the top center',
+    value: "topCenter",
+    label: "Top Center",
+    description: "Align watermark to the top center",
   },
   {
-    value: 'bottomCenter',
-    label: 'Bottom Center',
-    description: 'Align watermark to the bottom center',
+    value: "bottomCenter",
+    label: "Bottom Center",
+    description: "Align watermark to the bottom center",
   },
   {
-    value: 'topLeft',
-    label: 'Top Left',
-    description: 'Place watermark in the top left corner',
+    value: "topLeft",
+    label: "Top Left",
+    description: "Place watermark in the top left corner",
   },
   {
-    value: 'topRight',
-    label: 'Top Right',
-    description: 'Place watermark in the top right corner',
+    value: "topRight",
+    label: "Top Right",
+    description: "Place watermark in the top right corner",
   },
   {
-    value: 'bottomLeft',
-    label: 'Bottom Left',
-    description: 'Place watermark in the bottom left corner',
+    value: "bottomLeft",
+    label: "Bottom Left",
+    description: "Place watermark in the bottom left corner",
   },
   {
-    value: 'bottomRight',
-    label: 'Bottom Right',
-    description: 'Place watermark in the bottom right corner',
+    value: "bottomRight",
+    label: "Bottom Right",
+    description: "Place watermark in the bottom right corner",
   },
 ];
 
-
-export function WatermarkControls({
+const WatermarkControls = ({
   watermark,
   position,
   color,
   fontSize,
   opacity,
   rotation,
-  watermarkGrid,
+  watermarkGridX,
+  watermarkGridY,
   font,
   onWatermarkChange,
   onPositionChange,
@@ -128,31 +137,236 @@ export function WatermarkControls({
   onFontSizeChange,
   onOpacityChange,
   onRotationChange,
-  onWatermarkGridChange,
+  onWatermarkGridXChange,
+  onWatermarkGridYChange,
   onFontChange,
-}: WatermarkControlsProps) {
+}: WatermarkControlsProps) => {
+  const [availableFonts, setAvailableFonts] =
+    useState<FontOption[]>(DEFAULT_FONTS);
+  const [isLoadingFonts, setIsLoadingFonts] = useState(false);
+  const [isApiSupported, setIsApiSupported] = useState(false);
+  const [gridSync, setGridSync] = useState(false);
+
+  useEffect(() => {
+    setIsApiSupported("queryLocalFonts" in window);
+  }, []);
+
+  const loadSystemFonts = async () => {
+    try {
+      setIsLoadingFonts(true);
+      console.log("Loading system fonts...");
+      const fonts = await (window as any).queryLocalFonts();
+      console.log("Found", fonts.length, "fonts");
+
+      const uniqueFonts = new Set<string>();
+      // 先添加默认字体
+      DEFAULT_FONTS.forEach((font) => uniqueFonts.add(font.value));
+
+      const systemFonts: FontOption[] = [
+        ...DEFAULT_FONTS,
+        ...fonts
+          .filter((font: any) => {
+            if (!uniqueFonts.has(font.family)) {
+              uniqueFonts.add(font.family);
+              return true;
+            }
+            return false;
+          })
+          .map((font: any) => ({
+            value: font.family,
+            label: font.family,
+          })),
+      ].sort((a: FontOption, b: FontOption) => a.label.localeCompare(b.label));
+
+      console.log("Processed unique fonts:", systemFonts.length);
+      setAvailableFonts(systemFonts);
+    } catch (error) {
+      console.error("Failed to load system fonts:", error);
+      // 确保在加载失败时仍然显示默认字体
+      setAvailableFonts(DEFAULT_FONTS);
+    } finally {
+      setIsLoadingFonts(false);
+    }
+  };
+
   return (
-    <Card className="max-w-5xl mx-auto rounded-2xl shadow">
-      <CardHeader className="text-center pb-2">
-        <CardTitle className="text-3xl font-bold text-gray-900">
+    <Card className="w-full max-w-5xl mx-auto rounded-lg border bg-card shadow-sm">
+      <CardHeader className="space-y-1.5 p-6 flex flex-col items-center text-center">
+        <CardTitle className="text-2xl font-semibold leading-none tracking-tight">
           Watermark Settings
         </CardTitle>
-        <CardDescription className="text-gray-600 text-lg">
+        <CardDescription className="text-sm text-muted-foreground">
           Customize your watermark appearance and protect your images
         </CardDescription>
       </CardHeader>
 
-      <CardContent className="p-8">
+      <CardContent className="p-6 pt-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Watermark Text */}
-          <WatermarkText
-            watermark={watermark}
-            onWatermarkChange={onWatermarkChange}
-          />
+          <div className="space-y-3">
+            <Label
+              htmlFor="watermark"
+              className="text-sm font-medium leading-none"
+            >
+              Watermark Text
+            </Label>
+            <WatermarkText
+              watermark={watermark}
+              onWatermarkChange={onWatermarkChange}
+            />
+          </div>
+
+          {/* Font Selection */}
+          <div className="space-y-3">
+            <Label className="text-sm font-medium leading-none">Font</Label>
+            <Select value={font} onValueChange={onFontChange}>
+              <SelectTrigger className="w-full h-12">
+                <SelectValue placeholder="Select font" />
+              </SelectTrigger>
+              <SelectContent>
+                {isLoadingFonts ? (
+                  <div className="flex items-center justify-center py-2 text-sm text-muted-foreground">
+                    Loading system fonts...
+                  </div>
+                ) : !isApiSupported ? (
+                  <div className="py-2 px-2 text-sm text-muted-foreground">
+                    System fonts not supported in this browser
+                  </div>
+                ) : (
+                  <div
+                    className="flex items-center justify-center py-2 px-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      loadSystemFonts();
+                    }}
+                  >
+                    Load system fonts
+                  </div>
+                )}
+                {availableFonts.map((fontOption) => (
+                  <SelectItem
+                    key={fontOption.value}
+                    value={fontOption.value}
+                    className="py-2.5 h-12"
+                  >
+                    <span
+                      style={{ fontFamily: fontOption.value }}
+                      className="flex items-center text-lg"
+                    >
+                      <span>{fontOption.label}</span>
+                      {fontOption.description && (
+                        <span className="ml-2 text-xs text-muted-foreground">
+                          ({fontOption.description})
+                        </span>
+                      )}
+                    </span>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Position Selection */}
+          <div className="space-y-3">
+            <Label className="text-sm font-medium leading-none">
+              Watermark Position
+            </Label>
+            <Select value={position} onValueChange={onPositionChange}>
+              <SelectTrigger className="w-full h-12">
+                <SelectValue>
+                  {position
+                    ? POSITION_OPTIONS.find(
+                        (option) => option.value === position
+                      )?.label
+                    : "Choose a watermark position"}
+                </SelectValue>
+              </SelectTrigger>
+              <SelectContent>
+                {POSITION_OPTIONS.map((option) => (
+                  <SelectItem
+                    key={option.value}
+                    value={option.value}
+                    className="py-2.5 h-12"
+                  >
+                    <div className="space-y-0.5">
+                      <div className="text-sm font-medium">{option.label}</div>
+                      <div className="text-xs text-muted-foreground">
+                        {option.description}
+                      </div>
+                    </div>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Grid Size */}
+          <div className="space-y-3">
+            <Label className="text-sm font-medium leading-none">
+              Watermark Grid (Horizontal × Vertical)
+            </Label>
+            <div className="flex items-center space-x-4 h-12">
+              <div className="flex items-center">
+                <NumberInput
+                  value={watermarkGridX}
+                  onChange={(value) => {
+                    onWatermarkGridXChange(value);
+                    if (gridSync) {
+                      onWatermarkGridYChange(value);
+                    }
+                  }}
+                  min={1}
+                  max={20}
+                />
+              </div>
+              <span className="flex items-center justify-center text-muted-foreground">
+                ×
+              </span>
+              <div className="flex items-center">
+                <NumberInput
+                  value={watermarkGridY}
+                  onChange={(value) => {
+                    onWatermarkGridYChange(value);
+                    if (gridSync) {
+                      onWatermarkGridXChange(value);
+                    }
+                  }}
+                  min={1}
+                  max={20}
+                />
+              </div>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      onClick={() => setGridSync(!gridSync)}
+                      className={`h-9 w-9 ${
+                        gridSync ? "text-primary" : "text-muted-foreground"
+                      }`}
+                    >
+                      {gridSync ? (
+                        <Link className="h-4 w-4" />
+                      ) : (
+                        <Unlink className="h-4 w-4" />
+                      )}
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p className="text-xs">
+                      {gridSync ? "同步调整" : "独立调整"}
+                    </p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+            </div>
+          </div>
 
           {/* Color Picker */}
           <div className="space-y-3">
-            <Label className="text-gray-700 font-medium">
+            <Label className="text-sm font-medium leading-none">
               Watermark Color
             </Label>
             <ColorPicker
@@ -162,110 +376,28 @@ export function WatermarkControls({
             />
           </div>
 
-          {/* Font Selection */}
-          <div className="space-y-3">
-            <Label className="text-gray-700 font-medium">Font Family</Label>
-            <Select value={font} onValueChange={onFontChange}>
-              <SelectTrigger className="h-12 border-gray-200 hover:border-gray-300 transition-colors duration-200">
-                <SelectValue>
-                  {font
-                    ? FONT_OPTIONS.find((option) => option.value === font)
-                      ?.label
-                    : 'Choose a font style'}
-                </SelectValue>
-              </SelectTrigger>
-              <SelectContent>
-                {FONT_OPTIONS.map((option) => (
-                  <SelectItem
-                    key={option.value}
-                    value={option.value}
-                    style={{ fontFamily: option.value }}
-                    className="text-base py-3"
-                  >
-                    <div>
-                      <div className="font-medium">{option.label}</div>
-                      <div className="text-sm text-gray-500">
-                        {option.description}
-                      </div>
-                    </div>
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Position Selection */}
-          <div className="space-y-3">
-            <Label className="text-gray-700 font-medium">Position</Label>
-            <Select value={position} onValueChange={onPositionChange}>
-              <SelectTrigger className="h-12 border-gray-200 hover:border-gray-300 transition-colors duration-200">
-                <SelectValue>
-                  {position
-                    ? POSITION_OPTIONS.find(
-                      (option) => option.value === position
-                    )?.label
-                    : 'Choose a watermark position'}
-                </SelectValue>
-              </SelectTrigger>
-              <SelectContent>
-                {POSITION_OPTIONS.map((option) => (
-                  <SelectItem
-                    key={option.value}
-                    value={option.value}
-                    className="text-base py-3"
-                  >
-                    <div className="px-0">
-                      <div className="font-medium">{option.label}</div>
-                      <div className="text-sm text-gray-500">
-                        {option.description}
-                      </div>
-                    </div>
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Grid Size / Number of Watermarks */}
-          <div className="space-y-3">
-            <Label className="text-gray-700 font-medium">
-              Grid Size: {watermarkGrid} × {watermarkGrid}
-            </Label>
-            <Slider
-              value={watermarkGrid}
-              onValueChange={onWatermarkGridChange}
-              min={1}
-              max={12}
-              step={1}
-              className="py-4"
-              aria-label={
-                position === 'tile'
-                  ? 'Grid size adjustment'
-                  : 'Number of watermarks adjustment'
-              }
-            />
-          </div>
-
           {/* Font Size */}
           <div className="space-y-3">
-            <Label className="text-gray-700 font-medium">
-              Font Size: {fontSize}px
+            <Label className="text-sm font-medium leading-none">
+              Font Size
+              <span className="ml-1 text-muted-foreground">{fontSize}px</span>
             </Label>
             <Slider
               value={fontSize}
               onValueChange={onFontSizeChange}
               min={20}
-              max={120}
+              max={200}
               step={1}
-              className="py-4"
+              className="py-4 h-12"
               aria-label="Font size adjustment"
             />
           </div>
 
           {/* Opacity */}
           <div className="space-y-3">
-            <Label className="text-gray-700 font-medium">
-              Opacity: {opacity}%
+            <Label className="text-sm font-medium leading-none">
+              Opacity
+              <span className="ml-1 text-muted-foreground">{opacity}%</span>
             </Label>
             <Slider
               value={opacity}
@@ -273,15 +405,16 @@ export function WatermarkControls({
               min={1}
               max={100}
               step={1}
-              className="py-4"
+              className="py-4 h-12"
               aria-label="Opacity adjustment"
             />
           </div>
 
           {/* Rotation */}
           <div className="space-y-3">
-            <Label className="text-gray-700 font-medium">
-              Rotation: {rotation}°
+            <Label className="text-sm font-medium leading-none">
+              Rotation
+              <span className="ml-1 text-muted-foreground">{rotation}°</span>
             </Label>
             <Slider
               value={rotation}
@@ -289,7 +422,7 @@ export function WatermarkControls({
               min={0}
               max={360}
               step={1}
-              className="py-4"
+              className="py-4 h-12"
               aria-label="Rotation adjustment"
             />
           </div>
@@ -297,4 +430,6 @@ export function WatermarkControls({
       </CardContent>
     </Card>
   );
-}
+};
+
+export { WatermarkControls };

@@ -15,34 +15,35 @@ export function FooterContent() {
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="benefits">
           <AccordionTrigger className="text-xl font-semibold">
-            Why Watermark Your Images?
+            Why Should You Care About Image Watermarking?
           </AccordionTrigger>
           <AccordionContent className="space-y-4">
             <p className="text-gray-600">
-              Adding watermarks to your images is a crucial step in protecting
-              your visual content online. Watermarking provides several key
-              benefits:
+              As a content creator, your images are valuable assets that
+              require protection. Watermarking provides a robust defense against
+              image theft and misuse.
             </p>
             <ul className="list-disc pl-6 space-y-2 text-gray-600">
               <li>
-                <strong>Copyright Protection:</strong> Deters unauthorized use
-                and clearly identifies you as the owner.
+                <strong>Protect Your Intellectual Property:</strong> Safeguard
+                your original work from unauthorized use.
               </li>
               <li>
-                <strong>Brand Building:</strong> Promotes your brand by
-                consistently displaying your logo or name across your images.
+                <strong>Build Your Brand:</strong> Consistently display your
+                logo or name to establish a strong brand identity.
               </li>
               <li>
-                <strong>Deterrent to Theft:</strong> Makes it less appealing for
+                <strong>Deter Image Theft:</strong> Make it less appealing for
                 others to steal and misuse your images.
               </li>
               <li>
-                <strong>Professionalism:</strong> Adds a professional touch to
-                your work, especially for client proofs or portfolio displays.
+                <strong>Add Professionalism:</strong> Enhance your work with a
+                professional touch, especially for client proofs or portfolio
+                displays.
               </li>
               <li>
-                <strong>Source Tracking:</strong> Helps track the origin of your
-                images if they are shared online.
+                <strong>Track Image Origin:</strong> Easily identify the source
+                of your images if they are shared online.
               </li>
             </ul>
             <p className="text-gray-600">
@@ -56,7 +57,7 @@ export function FooterContent() {
 
         <AccordionItem value="usage">
           <AccordionTrigger className="text-xl font-semibold">
-            Watermark Use Cases & Examples
+            How Can You Use Watermarking?
           </AccordionTrigger>
           <AccordionContent className="space-y-4">
             <p className="text-gray-600">
@@ -89,22 +90,12 @@ export function FooterContent() {
                 like "Confidential," "Draft," or "Not for Distribution."{' '}
               </li>
             </ul>
-            <p className="text-gray-600">
-              <strong>Common Watermark Text Examples:</strong>
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-600">
-              <li>"For Rental Use Only"</li>
-              <li>"For Employment Application Only"</li>
-              <li>"Copyright [Your Name/Company] - All Rights Reserved"</li>
-              <li>"Sample - Do Not Copy"</li>
-              <li>"Proof - Not Final Version"</li>
-            </ul>
           </AccordionContent>
         </AccordionItem>
 
         <AccordionItem value="features">
           <AccordionTrigger className="text-xl font-semibold">
-            Custom Watermark Features & Offline Benefits
+            What Custom Watermark Features Do You Need?
           </AccordionTrigger>
           <AccordionContent className="space-y-4">
             <p className="text-gray-600">

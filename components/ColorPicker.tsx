@@ -66,7 +66,7 @@ export function ColorPicker({ value, onChange }: ColorPickerProps) {
   return (
     <div className="space-y-3" ref={containerRef}>
       <div className="grid grid-cols-2 gap-4">
-        <div className="relative">
+        <div className="relative group">
           <input
             type="color"
             value={value.slice(0, 7)}
@@ -77,11 +77,16 @@ export function ColorPicker({ value, onChange }: ColorPickerProps) {
             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
             ref={colorInputRef}
           />
-          <div
-            className="h-12 w-full rounded-lg border border-gray-200 hover:border-gray-300 transition-colors duration-200 cursor-pointer shadow-sm"
-            style={{ backgroundColor: value }}
-            onClick={handleColorClick}
-          />
+          <div className="flex h-12 w-full rounded-lg border border-input bg-background hover:bg-accent/5 transition-colors duration-200 cursor-pointer shadow-sm overflow-hidden">
+            <div
+              className="w-1/2 h-full border-r"
+              style={{ backgroundColor: value }}
+            />
+            <div className="flex-1 flex items-center px-3 text-sm text-muted-foreground">
+              Color Picker
+            </div>
+          </div>
+          <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-15 group-focus-within:opacity-15 transition-opacity duration-300 -z-10" />
         </div>
 
         <div className="relative">
@@ -119,14 +124,14 @@ export function ColorPicker({ value, onChange }: ColorPickerProps) {
                     className="w-full px-3 py-2 text-sm text-left hover:bg-accent focus:bg-accent focus:outline-none transition-colors"
                     onClick={() => handlePresetSelect(preset.value)}
                   >
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-start gap-3">
                       <div
-                        className="w-6 h-6 rounded border"
+                        className="w-8 h-8 rounded-md border shrink-0"
                         style={{ backgroundColor: preset.value }}
                       />
-                      <div>
+                      <div className="flex-1 min-w-0">
                         <div className="font-medium">{preset.label}</div>
-                        <div className="text-muted-foreground text-xs mt-0.5 text-wrap">
+                        <div className="text-muted-foreground text-xs mt-0.5 line-clamp-2">
                           {preset.description}
                         </div>
                       </div>

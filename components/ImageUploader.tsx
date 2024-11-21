@@ -3,8 +3,6 @@
 import {
   Upload,
   Image as ImageIcon,
-  Trash2,
-  Link,
   ArrowRight,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -14,16 +12,12 @@ import { toast } from 'sonner';
 import { useState } from 'react';
 
 interface ImageUploaderProps {
-  image: string;
   onImageChange: (image: string) => void;
-  onClear: () => void;
   onImageUploaded?: () => void;
 }
 
 export function ImageUploader({
-  image,
   onImageChange,
-  onClear,
   onImageUploaded,
 }: ImageUploaderProps) {
   const [imageUrl, setImageUrl] = useState('');
@@ -88,6 +82,43 @@ export function ImageUploader({
     }
   };
 
+
+  // const handleUrlUpload = async () => {
+  //   if (!imageUrl) {
+  //     toast.error('Please enter an image URL');
+  //     return;
+  //   }
+  
+  //   try {
+  //     setIsLoading(true);
+  //     const encodedUrl = encodeURIComponent(imageUrl);
+  //     const response = await fetch(`/api/proxy?url=${encodedUrl}`);
+  
+  //     if (!response.ok) {
+  //       throw new Error('Failed to fetch image');
+  //     }
+  
+  //     const blob = await response.blob();
+  //     if (!blob.type.startsWith('image/')) {
+  //       throw new Error('Invalid image format');
+  //     }
+  
+  //     const reader = new FileReader();
+  //     reader.onload = (event) => {
+  //       const result = event.target?.result as string;
+  //       onImageChange(result);
+  //       onImageUploaded?.();
+  //       setImageUrl('');
+  //       toast.success('Image loaded successfully');
+  //     };
+  //     reader.readAsDataURL(blob);
+  //   } catch (error) {
+  //     toast.error('Failed to load image from URL');
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+
   const handlePaste = (e: React.ClipboardEvent) => {
     const items = e.clipboardData?.items;
     const imageItem = Array.from(items).find((item) =>
@@ -121,7 +152,7 @@ export function ImageUploader({
           </p>
         </div>
 
-        {!image ? (
+        {/* {!image ? ( */}
           <Tabs defaultValue="upload" className="w-full">
             <TabsList className="grid w-full grid-cols-2 mb-8">
               <TabsTrigger value="upload">Upload Image</TabsTrigger>
@@ -155,7 +186,7 @@ export function ImageUploader({
                 size="lg"
                 className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow-md transition-all duration-200"
                 onClick={() =>
-                  document.querySelector('input[type="file"]')?.click()
+                  (document.querySelector('input[type="file"]') as HTMLInputElement)?.click()
                 }
               >
                 <Upload className="mr-2 h-5 w-5" />
@@ -194,35 +225,6 @@ export function ImageUploader({
               </div>
             </TabsContent>
           </Tabs>
-        ) : (
-          <div className="flex gap-4">
-            <Button
-              size="lg"
-              className="flex-1 bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow-md transition-all duration-200"
-              onClick={() =>
-                document.querySelector('input[type="file"]')?.click()
-              }
-            >
-              <Upload className="mr-2 h-5 w-5" />
-              Upload New Image
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="flex-1 border-gray-300 hover:bg-gray-50 transition-colors duration-200"
-              onClick={onClear}
-            >
-              <Trash2 className="mr-2 h-5 w-5" />
-              Clear Image
-            </Button>
-            <input
-              type="file"
-              accept="image/*"
-              onChange={handleImageUpload}
-              className="hidden"
-            />
-          </div>
-        )}
       </div>
     </div>
   );

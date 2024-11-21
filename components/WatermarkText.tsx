@@ -52,10 +52,6 @@ export default function WatermarkText({ watermark, onWatermarkChange }: Watermar
 
   return (
     <div className="space-y-3" ref={containerRef}>
-      <Label htmlFor="watermark" className="text-muted-foreground font-medium">
-        Watermark Text
-      </Label>
-      
       <div className="relative">
         <div className="relative flex items-center">
           <Input
@@ -83,7 +79,7 @@ export default function WatermarkText({ watermark, onWatermarkChange }: Watermar
           <div className="absolute w-full mt-1 bg-popover border rounded-md shadow-md z-50">
             <div className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground border-b">
               <BookOpen size={14} />
-              <span>Quick presets</span>
+              <span>Quick presets for common watermark texts</span>
             </div>
             <div className="py-1 max-h-64 overflow-y-auto">
               {WATERMARK_PRESETS.map((preset) => (
