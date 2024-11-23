@@ -90,11 +90,11 @@ function calculateBasePosition(
 function calculateWatermarkArea(
   position: string,
   canvasSize: CanvasSize,
-  areaRatio: number = 0.3 // 区域占整体的比例
+  areaRatio: number = 0.15 // 区域占整体的比例
 ): WatermarkArea {
   const areaWidth = canvasSize.width * areaRatio;
   const areaHeight = canvasSize.height * areaRatio;
-  const padding = Math.min(canvasSize.width, canvasSize.height) * 0.05; // 动态padding
+  const padding = Math.min(canvasSize.width, canvasSize.height) * 0.005; // 动态padding
 
   const areas: Record<string, WatermarkArea> = {
     center: {
@@ -151,9 +151,11 @@ function drawTiledWatermarksInArea(
   area: WatermarkArea,
   metrics: { width: number; height: number }
 ) {
-  const gridX = Math.max(1, Math.floor(area.width / (metrics.width * 1.5)));
-  const gridY = Math.max(1, Math.floor(area.height / (metrics.height * 1.5)));
-  
+  // const gridX = Math.max(1, Math.floor(area.width / (metrics.width * 1.5)));
+  // const gridY = Math.max(1, Math.floor(area.height / (metrics.height * 1.5)));
+  const gridX = options.watermarkGridX;
+  const gridY = options.watermarkGridY;
+
   const spacingX = area.width / gridX;
   const spacingY = area.height / gridY;
 
@@ -192,7 +194,7 @@ function drawPositionedWatermarks(
   canvasSize: CanvasSize,
   metrics: { width: number; height: number }
 ) {
-  const padding = 20;
+  const padding = 5;
   const basePos = calculateBasePosition(options.position, canvasSize, metrics, padding);
   const offsetX = options.position.includes('Right')
     ? -metrics.width

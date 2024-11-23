@@ -1,67 +1,104 @@
-import { useState, useEffect, useRef, ChangeEvent } from 'react';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { ChevronDown, Palette } from 'lucide-react';
-
-// Predefined watermark colors with preview and descriptions
-const COLOR_PRESETS = [
-  { value: '#A9A9A9', label: 'Light Gray', description: 'Soft gray for unobtrusive text' },
-  { value: '#7D7D7D', label: 'Medium Gray', description: 'Neutral gray for balanced appearance' },
-  { value: '#4B4B4B', label: 'Deep Gray', description: 'Dark gray for subtle visibility' },
-  { value: '#1E90FF', label: 'Dodger Blue', description: 'Bright blue for clear visibility' },
-  { value: '#FF6347', label: 'Tomato Red', description: 'Vibrant red for attention-grabbing' },
-  { value: '#32CD32', label: 'Lime Green', description: 'Bright green for fresh look' },
-  { value: '#9370DB', label: 'Medium Purple', description: 'Moderate purple for creative documents' },
-  { value: '#FFD700', label: 'Gold', description: 'Elegant gold for premium feel' },
-] as const;
-
+import { useState, useEffect, useRef, ChangeEvent } from 'react'
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
+import { ChevronDown, Palette } from 'lucide-react'
+import { t, Trans } from '@lingui/macro'
+import { useLingui } from '@lingui/react'
 
 interface ColorPickerProps {
-  value: string;
-  onChange: (color: string) => void;
+  value: string
+  onChange: (color: string) => void
 }
 
 export function ColorPicker({ value, onChange }: ColorPickerProps) {
-  const [hexValue, setHexValue] = useState(value);
-  const [isOpen, setIsOpen] = useState(false);
-  const colorInputRef = useRef<HTMLInputElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [hexValue, setHexValue] = useState(value)
+  const [isOpen, setIsOpen] = useState(false)
+  const colorInputRef = useRef<HTMLInputElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    setHexValue(value);
-  }, [value]);
+    setHexValue(value)
+  }, [value])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false)
       }
-    };
+    }
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
 
   const handleHexChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const newValue = e.target.value;
-    setHexValue(newValue);
+    const newValue = e.target.value
+    setHexValue(newValue)
     if (/^#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?$/.test(newValue)) {
-      onChange(newValue);
+      onChange(newValue)
     }
-  };
+  }
 
   const handleColorClick = () => {
     if (colorInputRef.current) {
-      colorInputRef.current.click();
+      colorInputRef.current.click()
     }
-  };
+  }
 
   const handlePresetSelect = (colorValue: string) => {
+    onChange(colorValue)
+    setHexValue(colorValue)
+    setIsOpen(false)
+  }
 
-    onChange(colorValue);
-    setHexValue(colorValue);
-    setIsOpen(false);
-  };
+  const { i18n } = useLingui()
+
+  // Predefined watermark colors with preview and descriptions
+  const COLOR_PRESETS = [
+    {
+      value: '#A9A9A9',
+      label: <Trans>Light Gray</Trans>,
+      description: t(i18n)`Soft gray for unobtrusive text`
+    },
+    {
+      value: '#7D7D7D',
+      label: <Trans>Medium Gray</Trans>,
+      description: t(i18n)`Neutral gray for balanced appearance`
+    },
+    {
+      value: '#4B4B4B',
+      label: <Trans>Deep Gray</Trans>,
+      description: t(i18n)`Dark gray for subtle visibility`
+    },
+    {
+      value: '#1E90FF',
+      label: <Trans>Dodger Blue</Trans>,
+      description: t(i18n)`Bright blue for clear visibility`
+    },
+    {
+      value: '#FF6347',
+      label: <Trans>Tomato Red</Trans>,
+      description: t(i18n)`Vibrant red for attention-grabbing`
+    },
+    {
+      value: '#32CD32',
+      label: <Trans>Lime Green</Trans>,
+      description: t(i18n)`Bright green for fresh look`
+    },
+    {
+      value: '#9370DB',
+      label: <Trans>Medium Purple</Trans>,
+      description: t(i18n)`Moderate purple for creative documents`
+    },
+    {
+      value: '#FFD700',
+      label: <Trans>Gold</Trans>,
+      description: t(i18n)`Elegant gold for premium feel`
+    }
+  ] as const
 
   return (
     <div className="space-y-3" ref={containerRef}>
@@ -71,8 +108,8 @@ export function ColorPicker({ value, onChange }: ColorPickerProps) {
             type="color"
             value={value.slice(0, 7)}
             onChange={(e) => {
-              onChange(e.target.value);
-              setHexValue(e.target.value);
+              onChange(e.target.value)
+              setHexValue(e.target.value)
             }}
             className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
             ref={colorInputRef}
@@ -83,7 +120,7 @@ export function ColorPicker({ value, onChange }: ColorPickerProps) {
               style={{ backgroundColor: value }}
             />
             <div className="flex-1 flex items-center px-3 text-sm text-muted-foreground">
-              Color Picker
+              <Trans>Color Picker</Trans>
             </div>
           </div>
           <div className="absolute -inset-0.5 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-15 group-focus-within:opacity-15 transition-opacity duration-300 -z-10" />
@@ -94,7 +131,7 @@ export function ColorPicker({ value, onChange }: ColorPickerProps) {
             <Input
               value={hexValue}
               onChange={handleHexChange}
-              placeholder="#000000"
+              placeholder={t(i18n)`#000000`}
               className="h-12 pr-10 font-mono text-base"
               maxLength={9}
             />
@@ -106,7 +143,9 @@ export function ColorPicker({ value, onChange }: ColorPickerProps) {
               onClick={() => setIsOpen(!isOpen)}
             >
               <ChevronDown
-                className={`w-4 h-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  isOpen ? 'rotate-180' : ''
+                }`}
               />
             </Button>
           </div>
@@ -115,7 +154,9 @@ export function ColorPicker({ value, onChange }: ColorPickerProps) {
             <div className="absolute w-full mt-1 bg-popover border rounded-md shadow-md z-50">
               <div className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground border-b">
                 <Palette size={14} />
-                <span>Watermark Colors</span>
+                <span>
+                  <Trans>Watermark Colors</Trans>
+                </span>
               </div>
               <div className="py-1 max-h-64 overflow-y-auto">
                 {COLOR_PRESETS.map((preset) => (
@@ -144,5 +185,5 @@ export function ColorPicker({ value, onChange }: ColorPickerProps) {
         </div>
       </div>
     </div>
-  );
+  )
 }

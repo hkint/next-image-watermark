@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Trans } from '@lingui/macro';
 
 export function PageFooter() {
   return (
@@ -16,10 +17,10 @@ export function PageFooter() {
           </Link>
           <div className="text-gray-600">
             <Link
-              href="/"
+              href="#"
               className="hover:text-blue-400 transition-colors duration-200"
             >
-              {new Date().getFullYear()} ♥️ Image Watermark
+              {new Date().getFullYear()} ♥️  <Trans>Image + Watermark</Trans>
             </Link>
           </div>
           <div className="flex items-center gap-4">
@@ -35,7 +36,7 @@ export function PageFooter() {
                 width={16}
                 height={16}
               />
-              <span>View on GitHub</span>
+              <span><Trans>View on GitHub</Trans></span>
             </Link>
           </div>
         </div>

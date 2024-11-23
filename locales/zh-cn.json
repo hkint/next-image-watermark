@@ -1,0 +1,1999 @@
+{
+  "J/hVSQ": {
+    "translation": "{0}",
+    "message": "{0}",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        256
+      ],
+      [
+        "components/WatermarkControls.tsx",
+        288
+      ]
+    ]
+  },
+  "vucHtn": {
+    "translation": "#000000",
+    "message": "#000000",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        134
+      ]
+    ]
+  },
+  "seO8ws": {
+    "translation": "%s | 图片 + 水印 - 本地添加文本水印",
+    "message": "%s | Image + Watermark - Add Text Watermarks Locally",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        30
+      ]
+    ]
+  },
+  "/1fiYt": {
+    "translation": "<0>图片水印工具</0><1>为照片和图片添加专业水印。非常适合摄影师、数字艺术家和内容创作者。支持 JPG、PNG 和 WebP 格式。使用可自定义的文本和logo水印来保护知识产权。</1><2><3>快速且简单的水印应用</3><4>可自定义的不透明度和位置</4><5>支持批量处理</5><6>无需注册</6><7>免费水印工具</7></2>",
+    "message": "<0>Image Watermarking Tool</0><1>Add professional watermarks to your photos and images. Perfect for photographers, digital artists, and content creators. Supports JPG, PNG, and WebP formats. Protect your intellectual property with customizable text and logo watermarks.</1><2><3>Fast and easy watermark application</3><4>Customizable opacity and positioning</4><5>Batch processing available</5><6>No registration required</6><7>Free watermarking tool</7></2>",
+    "comments": [],
+    "origin": [
+      [
+        "components/PageHeader.tsx",
+        64
+      ]
+    ]
+  },
+  "ZaYc1E": {
+    "translation": "在图片中添加自定义水印，确保完全隐私 - 所有处理均在浏览器中离线进行",
+    "message": "Add custom watermarks to your image with complete privacy - all processing happens offline in your browser",
+    "comments": [],
+    "origin": [
+      [
+        "components/PageHeader.tsx",
+        31
+      ]
+    ]
+  },
+  "Sx4+qW": {
+    "translation": "三步简单添加水印",
+    "message": "Add Watermarks in Three Simple Steps",
+    "comments": [],
+    "origin": [
+      [
+        "components/HeroContent.tsx",
+        10
+      ]
+    ]
+  },
+  "1ghK1I": {
+    "translation": "在浏览器中私密地为照片添加水印 - 无需上传。图片保持在设备上。免费、安全、即时的水印处理，确保完全隐私。",
+    "message": "Add watermarks to your photos privately in your browser - No upload needed. Your images stay on your device. Free, secure, and instant watermarking with complete privacy.",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        75
+      ]
+    ]
+  },
+  "Ji3oW2": {
+    "translation": "在浏览器中私密地为照片添加水印。无服务器上传，完全隐私，瞬时结果。免费的离线水印工具。",
+    "message": "Add watermarks to your photos privately in your browser. No server upload, complete privacy, instant results. Free offline watermarking tool.",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        91
+      ]
+    ]
+  },
+  "t7NLho": {
+    "translation": "添加姓名或版权信息，以确保明确归属。",
+    "message": "Add your name or copyright information for clear attribution.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        218
+      ]
+    ]
+  },
+  "MUK+zg": {
+    "translation": "为图片添加水印有助于保护作品不被盗用或误用。它清楚地表明图片属于您，阻止他人在未经您允许的情况下进行复制或分发。",
+    "message": "Adding a watermark to your images helps protect your work from being stolen or misused. It makes it clear that the image belongs to you, discouraging others from copying or distributing it without your permission.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        50
+      ]
+    ]
+  },
+  "H8k9SA": {
+    "translation": "可调节的不透明度和大小：",
+    "message": "Adjustable Opacity & Size:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        233
+      ]
+    ]
+  },
+  "i19lsL": {
+    "translation": "将水印对齐至底部中心",
+    "message": "Align watermark to the bottom center",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        101
+      ]
+    ]
+  },
+  "WJl8EG": {
+    "translation": "将水印对齐至顶部中心",
+    "message": "Align watermark to the top center",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        96
+      ]
+    ]
+  },
+  "ylt2Pf": {
+    "translation": "版权所有",
+    "message": "All Rights Reserved",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        91
+      ]
+    ]
+  },
+  "1gbwAU": {
+    "translation": "即时应用水印，无需等待上传或服务器处理。",
+    "message": "Apply watermarks instantly without waiting for uploads or server-side processing.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        278
+      ]
+    ]
+  },
+  "+RjdWS": {
+    "translation": "底部居中",
+    "message": "Bottom Center",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        100
+      ]
+    ]
+  },
+  "g0zKZj": {
+    "translation": "左下角",
+    "message": "Bottom Left",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        115
+      ]
+    ]
+  },
+  "TMxOdP": {
+    "translation": "右下角",
+    "message": "Bottom Right",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        120
+      ]
+    ]
+  },
+  "qRGHEL": {
+    "translation": "明亮的蓝色以便清晰可见",
+    "message": "Bright blue for clear visibility",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        79
+      ]
+    ]
+  },
+  "H0unvF": {
+    "translation": "明亮的绿色以营造清新印象",
+    "message": "Bright green for fresh look",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        89
+      ]
+    ]
+  },
+  "vHWL5T": {
+    "translation": "浏览器水印",
+    "message": "browser watermark",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        43
+      ]
+    ]
+  },
+  "owstHB": {
+    "translation": "通过在图片上添加姓名、标志或联系信息，您可以创建一个可见的所有权标记，帮助您建立和保护个人或商业品牌。",
+    "message": "By adding your name, logo, or contact information to your images, you create a visible mark of ownership, helping you establish and protect your personal or business brand.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        71
+      ]
+    ]
+  },
+  "VTRXqB": {
+    "translation": "中心",
+    "message": "Center",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        90
+      ]
+    ]
+  },
+  "VAK1Gp": {
+    "translation": "选择水印位置",
+    "message": "Choose a watermark position",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        312
+      ]
+    ]
+  },
+  "zbz7MS": {
+    "translation": "点击选择文件",
+    "message": "Click to Choose File",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        204
+      ]
+    ]
+  },
+  "p21J5d": {
+    "translation": "客户端水印",
+    "message": "client-side watermark",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        47
+      ]
+    ]
+  },
+  "Yesdqm": {
+    "translation": "颜色选择器",
+    "message": "Color Picker",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        123
+      ]
+    ]
+  },
+  "XItpUY": {
+    "translation": "社区访问或通行证：",
+    "message": "Community Access or Gate Passes:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        152
+      ]
+    ]
+  },
+  "DIdLXq": {
+    "translation": "完全隐私：",
+    "message": "Complete Privacy:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        267
+      ]
+    ]
+  },
+  "m0jjCK": {
+    "translation": "机密",
+    "message": "Confidential",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        60
+      ]
+    ]
+  },
+  "vcdGvX": {
+    "translation": "控制水印的确切位置和角度，以获得最佳可见性。",
+    "message": "Control the exact position and angle of your watermark for optimal visibility.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        226
+      ]
+    ]
+  },
+  "RTxUjI": {
+    "translation": "复制到剪贴板",
+    "message": "Copy to Clipboard",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImagePreview.tsx",
+        82
+      ]
+    ]
+  },
+  "4zue79": {
+    "translation": "版权",
+    "message": "Copyright",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        90
+      ]
+    ]
+  },
+  "c284XK": {
+    "translation": "自定义水印文本：",
+    "message": "Custom Watermark Text:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        216
+      ]
+    ]
+  },
+  "QtYTGv": {
+    "translation": "自定义水印",
+    "message": "Custom Watermarks",
+    "comments": [],
+    "origin": [
+      [
+        "components/PageHeader.tsx",
+        55
+      ]
+    ]
+  },
+  "Of2DdR": {
+    "translation": "定制水印",
+    "message": "Customize Watermark",
+    "comments": [],
+    "origin": [
+      [
+        "components/HeroContent.tsx",
+        49
+      ]
+    ]
+  },
+  "/JViek": {
+    "translation": "自定义水印外观并保护图片",
+    "message": "Customize your watermark appearance and protect your images",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        202
+      ]
+    ]
+  },
+  "VILRPZ": {
+    "translation": "使用一系列设计功能来自定义水印，以满足品牌和安全需求：",
+    "message": "Customize your watermarks with a range of design features to suit your branding and security needs:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        208
+      ]
+    ]
+  },
+  "LqsrS9": {
+    "translation": "深灰色以提供微妙的可见性",
+    "message": "Dark gray for subtle visibility",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        74
+      ]
+    ]
+  },
+  "DUKFZH": {
+    "translation": "深灰",
+    "message": "Deep Gray",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        73
+      ]
+    ]
+  },
+  "uaWIjp": {
+    "translation": "防止图片盗用：",
+    "message": "Deter Image Theft:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        89
+      ]
+    ]
+  },
+  "4AwR1A": {
+    "translation": "道奇蓝",
+    "message": "Dodger Blue",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        78
+      ]
+    ]
+  },
+  "0yQo/k": {
+    "translation": "下载图片",
+    "message": "Download Image",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImagePreview.tsx",
+        72
+      ]
+    ]
+  },
+  "43EZpy": {
+    "translation": "立即下载或复制带水印图片。没有数据发送到任何服务器 - 所有操作都在浏览器中完成。",
+    "message": "Download or Copy your watermarked image instantly. No data is sent to any server - everything happens right in your browser.",
+    "comments": [],
+    "origin": [
+      [
+        "components/HeroContent.tsx",
+        76
+      ]
+    ]
+  },
+  "saIIDW": {
+    "translation": "下载结果",
+    "message": "Download Result",
+    "comments": [],
+    "origin": [
+      [
+        "components/HeroContent.tsx",
+        70
+      ]
+    ]
+  },
+  "c1rEgp": {
+    "translation": "草稿版本",
+    "message": "Draft Version",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        65
+      ],
+      [
+        "components/WatermarkText.tsx",
+        66
+      ]
+    ]
+  },
+  "FMrCSD": {
+    "translation": "拖放、上传或输入网址以开始",
+    "message": "Drag & drop, upload, or enter URL to get started",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        153
+      ]
+    ]
+  },
+  "uQyR+K": {
+    "translation": "将图片拖放到此处",
+    "message": "Drag and drop your image here",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        177
+      ]
+    ]
+  },
+  "xUglMZ": {
+    "translation": "轻松追踪图片来源：",
+    "message": "Easily Track Image Origins:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        79
+      ]
+    ]
+  },
+  "BcJs3e": {
+    "translation": "优雅的金色，营造高档感觉",
+    "message": "Elegant gold for premium feel",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        99
+      ]
+    ]
+  },
+  "lYGfRP": {
+    "translation": "英语",
+    "message": "English",
+    "comments": [],
+    "origin": [
+      [
+        "components/i18n/Switcher.tsx",
+        11
+      ]
+    ]
+  },
+  "Y5JQry": {
+    "translation": "享受离线加水印的额外安全性和效率：",
+    "message": "Enjoy the added security and efficiency of offline watermarking:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        260
+      ]
+    ]
+  },
+  "qGA3bc": {
+    "translation": "输入图片网址...",
+    "message": "Enter image URL...",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        213
+      ]
+    ]
+  },
+  "oBF8uq": {
+    "translation": "在图片上均匀分布水印",
+    "message": "Evenly distribute watermarks across the image",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        86
+      ]
+    ]
+  },
+  "M1RnFv": {
+    "translation": "已过期",
+    "message": "Expired",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        80
+      ]
+    ]
+  },
+  "zcRYmh": {
+    "translation": "过期文档",
+    "message": "Expired Document",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        81
+      ]
+    ]
+  },
+  "iaD29E": {
+    "translation": "无法从网址加载图片",
+    "message": "Failed to load image from URL",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        79
+      ]
+    ]
+  },
+  "Wbi3UC": {
+    "translation": "微调水印的透明度和缩放，以便与图片无缝结合。",
+    "message": "Fine-tune the watermark’s transparency and scale for seamless integration with your images.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        235
+      ]
+    ]
+  },
+  "5Cj9Ws": {
+    "translation": "字体",
+    "message": "Font",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        227
+      ]
+    ]
+  },
+  "cGeFup": {
+    "translation": "字体大小",
+    "message": "Font Size",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        417
+      ]
+    ]
+  },
+  "L5bG05": {
+    "translation": "对于机密法律文件，水印可以表示\"机密\",\"草稿\"或\"仅供审阅\", 确保信息安全处理。",
+    "message": "For confidential legal files, watermarks can signify \"Confidential,\" \"Draft,\" or \"For Review Only,\" ensuring information is handled securely.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        183
+      ]
+    ]
+  },
+  "JMtb75": {
+    "translation": "仅用于身份验证",
+    "message": "For Identity Verification Only",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        56
+      ]
+    ]
+  },
+  "85KCxb": {
+    "translation": "仅限个人使用",
+    "message": "For Personal Use Only",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        76
+      ]
+    ]
+  },
+  "CgXONa": {
+    "translation": "图片请求直接由浏览器发出，这可能遇到<0> 跨域资源共享 （CORS） </0>问题。此类场景下，请先下载图片然后上传处理。",
+    "message": "For security reasons, the image request comes directly from your browser, which may cause <0>CORS</0> issues. To avoid this, please download the image and access it locally.",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        234
+      ]
+    ]
+  },
+  "To4lMg": {
+    "translation": "免费的离线水印工具 - 可以本地添加文本水印，无需上传。照片不会离开设备。在完全私密的情况下调整不透明度、位置和字体样式。无需上传，无需注册。",
+    "message": "Free offline watermark tool for images - Add text watermarks locally without uploading. Your photos never leave your device. Adjust opacity, position, and font styles with complete privacy. No upload, no registration required.",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        34
+      ]
+    ]
+  },
+  "FYlHHU": {
+    "translation": "金色",
+    "message": "Gold",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        98
+      ]
+    ]
+  },
+  "luGcLX": {
+    "translation": "健康与医疗记录：",
+    "message": "Health & Medical Records:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        171
+      ]
+    ]
+  },
+  "Y+liPh": {
+    "translation": "医疗提供者可以在病人文件上添加水印，以维护隐私并防止未经授权的访问医疗信息。",
+    "message": "Healthcare providers can watermark patient documents to maintain privacy and prevent unauthorized access to medical information.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        173
+      ]
+    ]
+  },
+  "9Egg8e": {
+    "translation": "水印使用场景",
+    "message": "How Watermarking Can Benefit Real-Life Scenarios",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        111
+      ]
+    ]
+  },
+  "l36CB4": {
+    "translation": "仅限身份证复印件",
+    "message": "ID Copy Only",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        55
+      ]
+    ]
+  },
+  "sxWpfX": {
+    "translation": "图片 + 水印",
+    "message": "Image + Watermark",
+    "comments": [],
+    "origin": [
+      [
+        "components/PageFooter.tsx",
+        23
+      ],
+      [
+        "components/PageHeader.tsx",
+        27
+      ]
+    ]
+  },
+  "RZhdmI": {
+    "translation": "图片 + 水印",
+    "message": "Image + Watermark",
+    "comments": [],
+    "origin": [
+      [
+        "components/PageFooter.tsx",
+        23
+      ]
+    ],
+    "obsolete": true
+  },
+  "jzJEKQ": {
+    "translation": "图片 + 水印 - 本地添加文本水印",
+    "message": "Image + Watermark - Add Text Watermarks Locally",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        27
+      ]
+    ]
+  },
+  "Prf+DV": {
+    "translation": "图片加载成功",
+    "message": "Image loaded successfully",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        75
+      ]
+    ]
+  },
+  "Xr1Mcz": {
+    "translation": "图片粘贴成功",
+    "message": "Image pasted successfully",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        136
+      ]
+    ]
+  },
+  "sePO8K": {
+    "translation": "图片大小应小于10MB",
+    "message": "Image size should be less than 10MB",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        35
+      ]
+    ]
+  },
+  "AGZmwV": {
+    "translation": "图片上传成功",
+    "message": "Image uploaded successfully",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        44
+      ]
+    ]
+  },
+  "VyUuZb": {
+    "translation": "图片URL",
+    "message": "Image URL",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        165
+      ]
+    ]
+  },
+  "5TAfWD": {
+    "translation": "在当今数字世界中，共享图片已成为我们日常生活的一个普遍部分。无论是个人照片、家庭照片，还是您想与朋友或客户分享的照片，水印是保护图片不被未经授权使用的简单有效的方法。通过在设备上直接应用水印，您可以确保图片保持私密和安全，而无需将其上传到外部服务器。",
+    "message": "In today's digital world, sharing images has become a common part of our daily lives. Whether it's personal photos, family pictures, or photos you want to share with friends or clients, watermarking is a simple yet effective way to protect your images from unauthorized use. By applying watermarks directly on your device, you can ensure that your images stay private and secure, without the need to upload them to external servers.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        25
+      ]
+    ]
+  },
+  "i7NS4e": {
+    "translation": "独立调整",
+    "message": "Independent adjustment",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        393
+      ]
+    ]
+  },
+  "DXDd3D": {
+    "translation": "即时预览：",
+    "message": "Instant Preview:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        242
+      ]
+    ]
+  },
+  "8C7XjY": {
+    "translation": "内部文件 - 请勿分享",
+    "message": "Internal Document - Do Not Share",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        61
+      ]
+    ]
+  },
+  "Xo4tk5": {
+    "translation": "房东在网上发布房产时，可以保护其图片，以防止在其他房源中被未经授权使用。",
+    "message": "Landlords can protect images of their properties when posting online, preventing unauthorized use in other listings.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        125
+      ]
+    ]
+  },
+  "XrWB4/": {
+    "translation": "法律文件：",
+    "message": "Legal Documents:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        181
+      ]
+    ]
+  },
+  "xa/b9m": {
+    "translation": "浅灰色",
+    "message": "Light Gray",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        63
+      ]
+    ]
+  },
+  "H8r7yo": {
+    "translation": "闪电般的处理：",
+    "message": "Lightning-Fast Processing:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        276
+      ]
+    ]
+  },
+  "pIo4gz": {
+    "translation": "青柠绿",
+    "message": "Lime Green",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        88
+      ]
+    ]
+  },
+  "ofeJC+": {
+    "translation": "加载图片",
+    "message": "Load Image",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        227
+      ]
+    ]
+  },
+  "DHAPHM": {
+    "translation": "加载系统字体",
+    "message": "Load system fonts",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        273
+      ]
+    ]
+  },
+  "yvgZuh": {
+    "translation": "正在加载系统字体...",
+    "message": "Loading system fonts...",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        236
+      ]
+    ]
+  },
+  "Z3FXyt": {
+    "translation": "加载中...",
+    "message": "Loading...",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        224
+      ]
+    ]
+  },
+  "cXZHWR": {
+    "translation": "本地图片水印",
+    "message": "local image watermark",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        40
+      ]
+    ]
+  },
+  "7pPaaJ": {
+    "translation": "本地离线处理：拖放文件，浏览本地图片或粘贴图片网址。支持 JPG、PNG 和 WebP 格式。隐私得到了保障。",
+    "message": "Local offline processing: Drag & drop files, browse local images or paste image URL. Supports JPG, PNG and WebP formats. Your privacy is guaranteed.",
+    "comments": [],
+    "origin": [
+      [
+        "components/HeroContent.tsx",
+        33
+      ]
+    ]
+  },
+  "aqqUAk": {
+    "translation": "本地照片处理",
+    "message": "local photo processing",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        46
+      ]
+    ]
+  },
+  "2/lk3B": {
+    "translation": "通过离线处理保持对视觉资产的完全控制，防止数据泄露。",
+    "message": "Maintain complete control over your visual assets with offline processing that prevents data breaches.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        296
+      ]
+    ]
+  },
+  "bb8om6": {
+    "translation": "保持完全控制：",
+    "message": "Maintain Full Control:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        59
+      ]
+    ]
+  },
+  "a52aAG": {
+    "translation": "最高安全性：",
+    "message": "Maximum Security:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        294
+      ]
+    ]
+  },
+  "kJFwN6": {
+    "translation": "中灰色",
+    "message": "Medium Gray",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        68
+      ]
+    ]
+  },
+  "Ox4hpP": {
+    "translation": "中紫色",
+    "message": "Medium Purple",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        93
+      ]
+    ]
+  },
+  "UAmiha": {
+    "translation": "适合创意文档的中等紫色",
+    "message": "Moderate purple for creative documents",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        94
+      ]
+    ]
+  },
+  "mPglw+": {
+    "translation": "中性的灰色以达到平衡的外观",
+    "message": "Neutral gray for balanced appearance",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        69
+      ]
+    ]
+  },
+  "65Ug6r": {
+    "translation": "无上传水印",
+    "message": "no upload watermark",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        42
+      ]
+    ]
+  },
+  "DM7xTc": {
+    "translation": "离线功能：",
+    "message": "Offline Capability:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        285
+      ]
+    ]
+  },
+  "OB3KpL": {
+    "translation": "离线图片水印",
+    "message": "Offline Image Watermark",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        100
+      ]
+    ]
+  },
+  "SRQOm0": {
+    "translation": "离线图片水印 - 私下添加水印，无需上传",
+    "message": "Offline Image Watermark - Add Watermarks Privately Without Uploading",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        74
+      ]
+    ]
+  },
+  "gLl21r": {
+    "translation": "离线图片水印 - 私密水印，无需上传",
+    "message": "Offline Image Watermark - Private Watermarking Without Upload",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        90
+      ]
+    ]
+  },
+  "T5XOGi": {
+    "translation": "离线图片水印工具 - 私密且安全",
+    "message": "Offline Image Watermark Tool - Private & Secure",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        81
+      ]
+    ]
+  },
+  "bGLB4t": {
+    "translation": "离线照片编辑器",
+    "message": "offline photo editor",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        50
+      ]
+    ]
+  },
+  "cFPaFR": {
+    "translation": "离线水印",
+    "message": "offline watermark",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        39
+      ]
+    ]
+  },
+  "aa/6HI": {
+    "translation": "离线水印功能让您对图片拥有完全控制—一切都保留在设备上，您可以私密且安全地管理照片。",
+    "message": "Offline watermarking gives you full control over your images—everything stays on your device, and you can manage your photos privately and securely.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        61
+      ]
+    ]
+  },
+  "Qb8BfV": {
+    "translation": "在线职位申请：",
+    "message": "Online Job Applications:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        142
+      ]
+    ]
+  },
+  "aoLy25": {
+    "translation": "不透明度",
+    "message": "Opacity",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        434
+      ]
+    ]
+  },
+  "IiU0mi": {
+    "translation": "个人使用",
+    "message": "Personal Use",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        75
+      ]
+    ]
+  },
+  "W6qFYz": {
+    "translation": "通过文本个性化水印，调整不透明度、大小和位置。实时预览更改，以达到完美效果。",
+    "message": "Personalize your watermark with text, adjust opacity, size, and position. Preview changes in real-time for the perfect result.",
+    "comments": [],
+    "origin": [
+      [
+        "components/HeroContent.tsx",
+        55
+      ]
+    ]
+  },
+  "dlCx/p": {
+    "translation": "将水印放置在左下角",
+    "message": "Place watermark in the bottom left corner",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        116
+      ]
+    ]
+  },
+  "HFHWs8": {
+    "translation": "将水印放置在右下角",
+    "message": "Place watermark in the bottom right corner",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        121
+      ]
+    ]
+  },
+  "xOGUOK": {
+    "translation": "将水印放置在图片中间",
+    "message": "Place watermark in the middle of the image",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        91
+      ]
+    ]
+  },
+  "Lc+4rJ": {
+    "translation": "将水印放置在左上角",
+    "message": "Place watermark in the top left corner",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        106
+      ]
+    ]
+  },
+  "+Y21CX": {
+    "translation": "将水印放置在右上角",
+    "message": "Place watermark in the top right corner",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        111
+      ]
+    ]
+  },
+  "WSRb/y": {
+    "translation": "请输入图片 URL",
+    "message": "Please enter an image URL",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        52
+      ]
+    ]
+  },
+  "wdZZIf": {
+    "translation": "请上传图片文件",
+    "message": "Please upload an image file",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        30
+      ]
+    ]
+  },
+  "eVFYcD": {
+    "translation": "自定义水印",
+    "message": "Powerful Customization Options for Your Watermarks",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        204
+      ]
+    ]
+  },
+  "AkdcQL": {
+    "translation": "位置与旋转角度：",
+    "message": "Precise Placement & Rotation:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        224
+      ]
+    ]
+  },
+  "fQCmSv": {
+    "translation": "防止未经授权的使用：",
+    "message": "Prevent Unauthorized Use:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        48
+      ]
+    ]
+  },
+  "G17D5L": {
+    "translation": "在将水印应用到图片之前，实时预览水印效果。",
+    "message": "Preview your watermark in real-time before applying it to your images.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        244
+      ]
+    ]
+  },
+  "N5Xm6p": {
+    "translation": "以隐私为中心的图片工具",
+    "message": "Privacy-focused Image Tools",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        97
+      ]
+    ]
+  },
+  "27wP7q": {
+    "translation": "隐私离线处理",
+    "message": "Private & Offline",
+    "comments": [],
+    "origin": [
+      [
+        "components/PageHeader.tsx",
+        43
+      ]
+    ]
+  },
+  "HpEb0o": {
+    "translation": "隐私图片工具",
+    "message": "private image tool",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        49
+      ]
+    ]
+  },
+  "B9x57b": {
+    "translation": "隐私照片水印",
+    "message": "private photo watermark",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        45
+      ]
+    ]
+  },
+  "ppgYRP": {
+    "translation": "隐私水印工具",
+    "message": "private watermark tool",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        41
+      ]
+    ]
+  },
+  "MTLuK+": {
+    "translation": "在向雇主或人力资源部门提交个人文件（例如简历、身份证扫描件）时，保护这些文件，确保保密和安全。",
+    "message": "Protect personal documents (e.g., resumes, ID scans) when submitting them to employers or HR departments, ensuring confidentiality and security.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        134
+      ]
+    ]
+  },
+  "0b0KGu": {
+    "translation": "使用安全的离线水印保护图片",
+    "message": "Protect Your Images with Secure Offline Watermarking",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        13
+      ]
+    ]
+  },
+  "7f50zd": {
+    "translation": "一分钟内为图片添加水印",
+    "message": "Protect your images with watermarks in under a minute",
+    "comments": [],
+    "origin": [
+      [
+        "components/HeroContent.tsx",
+        13
+      ]
+    ]
+  },
+  "X+ojDe": {
+    "translation": "保护隐私：",
+    "message": "Protect Your Privacy:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        38
+      ]
+    ]
+  },
+  "YJcvQd": {
+    "translation": "快速预设示例",
+    "message": "Quick preset examples",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        127
+      ]
+    ]
+  },
+  "H1jJ11": {
+    "translation": "快速预设",
+    "message": "Quickly Presets",
+    "comments": [],
+    "origin": [
+      [
+        "components/PageHeader.tsx",
+        49
+      ]
+    ]
+  },
+  "zk+XKJ": {
+    "translation": "房地产交易：",
+    "message": "Real Estate Transactions:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        162
+      ]
+    ]
+  },
+  "FM9nmc": {
+    "translation": "租赁物业列表：",
+    "message": "Rental Property Listings:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        123
+      ]
+    ]
+  },
+  "EbwKO0": {
+    "translation": "居民在提交个人身份证明或入境表格时可以添加水印，以保护敏感信息，便于社区访问或门禁通行。",
+    "message": "Residents can watermark personal identification or entry forms when submitting them for community access or gate passes, protecting sensitive information.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        154
+      ]
+    ]
+  },
+  "exWyD0": {
+    "translation": "旋转",
+    "message": "Rotation",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        451
+      ]
+    ]
+  },
+  "LcJmOR": {
+    "translation": "示例",
+    "message": "Sample",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        85
+      ]
+    ]
+  },
+  "9YUjk9": {
+    "translation": "示例文档",
+    "message": "Sample Document",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        86
+      ]
+    ]
+  },
+  "p7WV1b": {
+    "translation": "安全图片水印",
+    "message": "secure image watermark",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        44
+      ]
+    ]
+  },
+  "bAiEJP": {
+    "translation": "选择图片",
+    "message": "Select Image",
+    "comments": [],
+    "origin": [
+      [
+        "components/HeroContent.tsx",
+        27
+      ]
+    ]
+  },
+  "rIp4p7": {
+    "translation": "柔和灰色，适合不显眼的文本",
+    "message": "Soft gray for unobtrusive text",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        64
+      ]
+    ]
+  },
+  "W7urZk": {
+    "translation": "强化个人品牌：",
+    "message": "Strengthen Your Personal Brand:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        69
+      ]
+    ]
+  },
+  "YPM0s3": {
+    "translation": "学生可以在他们的作业或项目中添加水印，以防止未经授权的共享或抄袭。",
+    "message": "Students can watermark their assignments or projects to protect against unauthorized sharing or plagiarism.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        193
+      ]
+    ]
+  },
+  "u4jdXa": {
+    "translation": "提交文件给人力资源：",
+    "message": "Submitting Documents to HR:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        132
+      ]
+    ]
+  },
+  "5i7CmK": {
+    "translation": "支持 JPG、PNG、WebP ...",
+    "message": "Supports JPG, PNG, WebP ...",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        180
+      ]
+    ]
+  },
+  "gNgTDC": {
+    "translation": "同步调整",
+    "message": "Sync adjustment",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        391
+      ]
+    ]
+  },
+  "EkdmEo": {
+    "translation": "此浏览器不支持系统字体",
+    "message": "System fonts not supported in this browser",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        240
+      ]
+    ]
+  },
+  "9JbLtQ": {
+    "translation": "平铺模式",
+    "message": "Tile Pattern",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        85
+      ]
+    ]
+  },
+  "y2tY/h": {
+    "translation": "西红柿红",
+    "message": "Tomato Red",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        83
+      ]
+    ]
+  },
+  "k7X3Z+": {
+    "translation": "顶部居中",
+    "message": "Top Center",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        95
+      ]
+    ]
+  },
+  "J6FDgI": {
+    "translation": "左上角",
+    "message": "Top Left",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        105
+      ]
+    ]
+  },
+  "t9lePG": {
+    "translation": "右上角",
+    "message": "Top Right",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        110
+      ]
+    ]
+  },
+  "9Xigls": {
+    "translation": "审核中",
+    "message": "Under Review",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        70
+      ],
+      [
+        "components/WatermarkText.tsx",
+        71
+      ]
+    ]
+  },
+  "8tOHkv": {
+    "translation": "大学提交：",
+    "message": "University Submissions:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        191
+      ]
+    ]
+  },
+  "lnCMdg": {
+    "translation": "上传图片",
+    "message": "Upload Image",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        161
+      ]
+    ]
+  },
+  "IYbuuf": {
+    "translation": "上传图片",
+    "message": "Upload Your Image",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        150
+      ]
+    ]
+  },
+  "PK1yir": {
+    "translation": "鲜艳的红色吸引注意",
+    "message": "Vibrant red for attention-grabbing",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        84
+      ]
+    ]
+  },
+  "hy6L14": {
+    "translation": "在 GitHub 上查看",
+    "message": "View on GitHub",
+    "comments": [],
+    "origin": [
+      [
+        "components/PageFooter.tsx",
+        39
+      ]
+    ]
+  },
+  "BSfDFm": {
+    "translation": "明显的水印使图片不易被小偷或未经授权的用户吸引，从而大大降低被盗或被滥用的可能性。",
+    "message": "Visible watermarks make your images less appealing to thieves or unauthorized users, significantly reducing the likelihood of theft or misuse.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        91
+      ]
+    ]
+  },
+  "o5uAJW": {
+    "translation": "水印颜色",
+    "message": "Watermark Color",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        405
+      ]
+    ]
+  },
+  "21Nw5G": {
+    "translation": "水印颜色",
+    "message": "Watermark Colors",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        158
+      ]
+    ]
+  },
+  "+Isg7r": {
+    "translation": "水印网格（横向 × 纵向）",
+    "message": "Watermark Grid (Horizontal × Vertical)",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        338
+      ]
+    ]
+  },
+  "dhoFKo": {
+    "translation": "在交易过程中对物业的水印图片，确保未经许可不被复制或重新分发。",
+    "message": "Watermark images of properties during transactions, ensuring they are not copied or redistributed without permission.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        164
+      ]
+    ]
+  },
+  "Jr8AtU": {
+    "translation": "水印位置",
+    "message": "Watermark Position",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        303
+      ]
+    ]
+  },
+  "IHyvut": {
+    "translation": "水印敏感信息，例如求职信、简历或作品样本，以确保它们不会被滥用或再次利用。",
+    "message": "Watermark sensitive information such as cover letters, resumes, or portfolio samples to ensure they cannot be misused or repurposed.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        144
+      ]
+    ]
+  },
+  "4ObCMk": {
+    "translation": "水印设置",
+    "message": "Watermark Settings",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        199
+      ]
+    ]
+  },
+  "2+NxRS": {
+    "translation": "水印文本",
+    "message": "Watermark Text",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        216
+      ]
+    ]
+  },
+  "AOtlJx": {
+    "translation": "无需上传的水印",
+    "message": "watermark without upload",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        48
+      ]
+    ]
+  },
+  "cmVFfH": {
+    "translation": "即使在没有互联网连接的情况下，也可以对图片进行水印，确保灵活和控制。",
+    "message": "Watermark your images even without an internet connection, ensuring flexibility and control.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        287
+      ]
+    ]
+  },
+  "oISGVV": {
+    "translation": "水印不仅仅适用于摄影师和企业。在许多日常情况下，它都可以成为一种有价值的工具：",
+    "message": "Watermarking is not just for photographers and businesses. It can be a valuable tool in many everyday situations:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        115
+      ]
+    ]
+  },
+  "vtTRDo": {
+    "translation": "直接在设备上对图片进行水印处理，确保其保持私密和安全，防止未经授权的访问或您未同意的分享。",
+    "message": "Watermarking your images directly on your device ensures they stay private and secure, preventing unauthorized access or sharing without your consent.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        40
+      ]
+    ]
+  },
+  "k7jQQZ": {
+    "translation": "水印使您在图片被在线共享或转发时，轻松追踪其来源，帮助您跟踪原始内容。",
+    "message": "Watermarks make it easy to trace the source of your images if they are shared or reposted online, helping you keep track of your original content.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        81
+      ]
+    ]
+  },
+  "SDrl9l": {
+    "translation": "为什么水印对保护图片至关重要",
+    "message": "Why Watermarking is Essential for Protecting Your Images",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        19
+      ]
+    ]
+  },
+  "FXw2hk": {
+    "translation": "通过离线水印，您可以轻松放心地保护个人或专业图片，知道内容始终安全地保留在设备上。无需上传，无风险——只是对图片的完全控制和安全。",
+    "message": "With offline watermarking, you can protect your personal or professional images with ease and peace of mind, knowing that your content stays safe on your device at all times. No uploads, no risks—just full control and security over your images.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        99
+      ]
+    ]
+  },
+  "/trP/W": {
+    "translation": "图片保持本地，无需将其上传到外部服务器。",
+    "message": "Your images stay local, with no need to upload them to external servers.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        269
+      ]
+    ]
+  },
+  "5/yex+": {
+    "translation": "简体中文",
+    "message": "简体中文",
+    "comments": [],
+    "origin": [
+      [
+        "components/i18n/Switcher.tsx",
+        15
+      ]
+    ]
+  }
+}

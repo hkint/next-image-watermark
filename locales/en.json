@@ -1,0 +1,1999 @@
+{
+  "J/hVSQ": {
+    "translation": "{0}",
+    "message": "{0}",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        256
+      ],
+      [
+        "components/WatermarkControls.tsx",
+        288
+      ]
+    ]
+  },
+  "vucHtn": {
+    "translation": "#000000",
+    "message": "#000000",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        134
+      ]
+    ]
+  },
+  "seO8ws": {
+    "translation": "%s | Image + Watermark - Add Text Watermarks Locally",
+    "message": "%s | Image + Watermark - Add Text Watermarks Locally",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        30
+      ]
+    ]
+  },
+  "/1fiYt": {
+    "translation": "<0>Image Watermarking Tool</0><1>Add professional watermarks to your photos and images. Perfect for photographers, digital artists, and content creators. Supports JPG, PNG, and WebP formats. Protect your intellectual property with customizable text and logo watermarks.</1><2><3>Fast and easy watermark application</3><4>Customizable opacity and positioning</4><5>Batch processing available</5><6>No registration required</6><7>Free watermarking tool</7></2>",
+    "message": "<0>Image Watermarking Tool</0><1>Add professional watermarks to your photos and images. Perfect for photographers, digital artists, and content creators. Supports JPG, PNG, and WebP formats. Protect your intellectual property with customizable text and logo watermarks.</1><2><3>Fast and easy watermark application</3><4>Customizable opacity and positioning</4><5>Batch processing available</5><6>No registration required</6><7>Free watermarking tool</7></2>",
+    "comments": [],
+    "origin": [
+      [
+        "components/PageHeader.tsx",
+        64
+      ]
+    ]
+  },
+  "ZaYc1E": {
+    "translation": "Add custom watermarks to your image with complete privacy - all processing happens offline in your browser",
+    "message": "Add custom watermarks to your image with complete privacy - all processing happens offline in your browser",
+    "comments": [],
+    "origin": [
+      [
+        "components/PageHeader.tsx",
+        31
+      ]
+    ]
+  },
+  "Sx4+qW": {
+    "translation": "Add Watermarks in Three Simple Steps",
+    "message": "Add Watermarks in Three Simple Steps",
+    "comments": [],
+    "origin": [
+      [
+        "components/HeroContent.tsx",
+        10
+      ]
+    ]
+  },
+  "1ghK1I": {
+    "translation": "Add watermarks to your photos privately in your browser - No upload needed. Your images stay on your device. Free, secure, and instant watermarking with complete privacy.",
+    "message": "Add watermarks to your photos privately in your browser - No upload needed. Your images stay on your device. Free, secure, and instant watermarking with complete privacy.",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        75
+      ]
+    ]
+  },
+  "Ji3oW2": {
+    "translation": "Add watermarks to your photos privately in your browser. No server upload, complete privacy, instant results. Free offline watermarking tool.",
+    "message": "Add watermarks to your photos privately in your browser. No server upload, complete privacy, instant results. Free offline watermarking tool.",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        91
+      ]
+    ]
+  },
+  "t7NLho": {
+    "translation": "Add your name or copyright information for clear attribution.",
+    "message": "Add your name or copyright information for clear attribution.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        218
+      ]
+    ]
+  },
+  "MUK+zg": {
+    "translation": "Adding a watermark to your images helps protect your work from being stolen or misused. It makes it clear that the image belongs to you, discouraging others from copying or distributing it without your permission.",
+    "message": "Adding a watermark to your images helps protect your work from being stolen or misused. It makes it clear that the image belongs to you, discouraging others from copying or distributing it without your permission.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        50
+      ]
+    ]
+  },
+  "H8k9SA": {
+    "translation": "Adjustable Opacity & Size:",
+    "message": "Adjustable Opacity & Size:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        233
+      ]
+    ]
+  },
+  "i19lsL": {
+    "translation": "Align watermark to the bottom center",
+    "message": "Align watermark to the bottom center",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        101
+      ]
+    ]
+  },
+  "WJl8EG": {
+    "translation": "Align watermark to the top center",
+    "message": "Align watermark to the top center",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        96
+      ]
+    ]
+  },
+  "ylt2Pf": {
+    "translation": "All Rights Reserved",
+    "message": "All Rights Reserved",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        91
+      ]
+    ]
+  },
+  "1gbwAU": {
+    "translation": "Apply watermarks instantly without waiting for uploads or server-side processing.",
+    "message": "Apply watermarks instantly without waiting for uploads or server-side processing.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        278
+      ]
+    ]
+  },
+  "+RjdWS": {
+    "translation": "Bottom Center",
+    "message": "Bottom Center",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        100
+      ]
+    ]
+  },
+  "g0zKZj": {
+    "translation": "Bottom Left",
+    "message": "Bottom Left",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        115
+      ]
+    ]
+  },
+  "TMxOdP": {
+    "translation": "Bottom Right",
+    "message": "Bottom Right",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        120
+      ]
+    ]
+  },
+  "qRGHEL": {
+    "translation": "Bright blue for clear visibility",
+    "message": "Bright blue for clear visibility",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        79
+      ]
+    ]
+  },
+  "H0unvF": {
+    "translation": "Bright green for fresh look",
+    "message": "Bright green for fresh look",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        89
+      ]
+    ]
+  },
+  "vHWL5T": {
+    "translation": "browser watermark",
+    "message": "browser watermark",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        43
+      ]
+    ]
+  },
+  "owstHB": {
+    "translation": "By adding your name, logo, or contact information to your images, you create a visible mark of ownership, helping you establish and protect your personal or business brand.",
+    "message": "By adding your name, logo, or contact information to your images, you create a visible mark of ownership, helping you establish and protect your personal or business brand.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        71
+      ]
+    ]
+  },
+  "VTRXqB": {
+    "translation": "Center",
+    "message": "Center",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        90
+      ]
+    ]
+  },
+  "VAK1Gp": {
+    "translation": "Choose a watermark position",
+    "message": "Choose a watermark position",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        312
+      ]
+    ]
+  },
+  "zbz7MS": {
+    "translation": "Click to Choose File",
+    "message": "Click to Choose File",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        204
+      ]
+    ]
+  },
+  "p21J5d": {
+    "translation": "client-side watermark",
+    "message": "client-side watermark",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        47
+      ]
+    ]
+  },
+  "Yesdqm": {
+    "translation": "Color Picker",
+    "message": "Color Picker",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        123
+      ]
+    ]
+  },
+  "XItpUY": {
+    "translation": "Community Access or Gate Passes:",
+    "message": "Community Access or Gate Passes:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        152
+      ]
+    ]
+  },
+  "DIdLXq": {
+    "translation": "Complete Privacy:",
+    "message": "Complete Privacy:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        267
+      ]
+    ]
+  },
+  "m0jjCK": {
+    "translation": "Confidential",
+    "message": "Confidential",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        60
+      ]
+    ]
+  },
+  "vcdGvX": {
+    "translation": "Control the exact position and angle of your watermark for optimal visibility.",
+    "message": "Control the exact position and angle of your watermark for optimal visibility.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        226
+      ]
+    ]
+  },
+  "RTxUjI": {
+    "translation": "Copy to Clipboard",
+    "message": "Copy to Clipboard",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImagePreview.tsx",
+        82
+      ]
+    ]
+  },
+  "4zue79": {
+    "translation": "Copyright",
+    "message": "Copyright",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        90
+      ]
+    ]
+  },
+  "c284XK": {
+    "translation": "Custom Watermark Text:",
+    "message": "Custom Watermark Text:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        216
+      ]
+    ]
+  },
+  "QtYTGv": {
+    "translation": "Custom Watermarks",
+    "message": "Custom Watermarks",
+    "comments": [],
+    "origin": [
+      [
+        "components/PageHeader.tsx",
+        55
+      ]
+    ]
+  },
+  "Of2DdR": {
+    "translation": "Customize Watermark",
+    "message": "Customize Watermark",
+    "comments": [],
+    "origin": [
+      [
+        "components/HeroContent.tsx",
+        49
+      ]
+    ]
+  },
+  "/JViek": {
+    "translation": "Customize your watermark appearance and protect your images",
+    "message": "Customize your watermark appearance and protect your images",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        202
+      ]
+    ]
+  },
+  "VILRPZ": {
+    "translation": "Customize your watermarks with a range of design features to suit your branding and security needs:",
+    "message": "Customize your watermarks with a range of design features to suit your branding and security needs:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        208
+      ]
+    ]
+  },
+  "LqsrS9": {
+    "translation": "Dark gray for subtle visibility",
+    "message": "Dark gray for subtle visibility",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        74
+      ]
+    ]
+  },
+  "DUKFZH": {
+    "translation": "Deep Gray",
+    "message": "Deep Gray",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        73
+      ]
+    ]
+  },
+  "uaWIjp": {
+    "translation": "Deter Image Theft:",
+    "message": "Deter Image Theft:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        89
+      ]
+    ]
+  },
+  "4AwR1A": {
+    "translation": "Dodger Blue",
+    "message": "Dodger Blue",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        78
+      ]
+    ]
+  },
+  "0yQo/k": {
+    "translation": "Download Image",
+    "message": "Download Image",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImagePreview.tsx",
+        72
+      ]
+    ]
+  },
+  "43EZpy": {
+    "translation": "Download or Copy your watermarked image instantly. No data is sent to any server - everything happens right in your browser.",
+    "message": "Download or Copy your watermarked image instantly. No data is sent to any server - everything happens right in your browser.",
+    "comments": [],
+    "origin": [
+      [
+        "components/HeroContent.tsx",
+        76
+      ]
+    ]
+  },
+  "saIIDW": {
+    "translation": "Download Result",
+    "message": "Download Result",
+    "comments": [],
+    "origin": [
+      [
+        "components/HeroContent.tsx",
+        70
+      ]
+    ]
+  },
+  "c1rEgp": {
+    "translation": "Draft Version",
+    "message": "Draft Version",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        65
+      ],
+      [
+        "components/WatermarkText.tsx",
+        66
+      ]
+    ]
+  },
+  "FMrCSD": {
+    "translation": "Drag & drop, upload, or enter URL to get started",
+    "message": "Drag & drop, upload, or enter URL to get started",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        153
+      ]
+    ]
+  },
+  "uQyR+K": {
+    "translation": "Drag and drop your image here",
+    "message": "Drag and drop your image here",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        177
+      ]
+    ]
+  },
+  "xUglMZ": {
+    "translation": "Easily Track Image Origins:",
+    "message": "Easily Track Image Origins:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        79
+      ]
+    ]
+  },
+  "BcJs3e": {
+    "translation": "Elegant gold for premium feel",
+    "message": "Elegant gold for premium feel",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        99
+      ]
+    ]
+  },
+  "lYGfRP": {
+    "translation": "English",
+    "message": "English",
+    "comments": [],
+    "origin": [
+      [
+        "components/i18n/Switcher.tsx",
+        11
+      ]
+    ]
+  },
+  "Y5JQry": {
+    "translation": "Enjoy the added security and efficiency of offline watermarking:",
+    "message": "Enjoy the added security and efficiency of offline watermarking:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        260
+      ]
+    ]
+  },
+  "qGA3bc": {
+    "translation": "Enter image URL...",
+    "message": "Enter image URL...",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        213
+      ]
+    ]
+  },
+  "oBF8uq": {
+    "translation": "Evenly distribute watermarks across the image",
+    "message": "Evenly distribute watermarks across the image",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        86
+      ]
+    ]
+  },
+  "M1RnFv": {
+    "translation": "Expired",
+    "message": "Expired",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        80
+      ]
+    ]
+  },
+  "zcRYmh": {
+    "translation": "Expired Document",
+    "message": "Expired Document",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        81
+      ]
+    ]
+  },
+  "iaD29E": {
+    "translation": "Failed to load image from URL",
+    "message": "Failed to load image from URL",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        79
+      ]
+    ]
+  },
+  "Wbi3UC": {
+    "translation": "Fine-tune the watermark’s transparency and scale for seamless integration with your images.",
+    "message": "Fine-tune the watermark’s transparency and scale for seamless integration with your images.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        235
+      ]
+    ]
+  },
+  "5Cj9Ws": {
+    "translation": "Font",
+    "message": "Font",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        227
+      ]
+    ]
+  },
+  "cGeFup": {
+    "translation": "Font Size",
+    "message": "Font Size",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        417
+      ]
+    ]
+  },
+  "L5bG05": {
+    "translation": "For confidential legal files, watermarks can signify \"Confidential,\" \"Draft,\" or \"For Review Only,\" ensuring information is handled securely.",
+    "message": "For confidential legal files, watermarks can signify \"Confidential,\" \"Draft,\" or \"For Review Only,\" ensuring information is handled securely.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        183
+      ]
+    ]
+  },
+  "JMtb75": {
+    "translation": "For Identity Verification Only",
+    "message": "For Identity Verification Only",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        56
+      ]
+    ]
+  },
+  "85KCxb": {
+    "translation": "For Personal Use Only",
+    "message": "For Personal Use Only",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        76
+      ]
+    ]
+  },
+  "CgXONa": {
+    "translation": "For security reasons, the image request comes directly from your browser, which may cause <0>CORS</0> issues. To avoid this, please download the image and access it locally.",
+    "message": "For security reasons, the image request comes directly from your browser, which may cause <0>CORS</0> issues. To avoid this, please download the image and access it locally.",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        234
+      ]
+    ]
+  },
+  "To4lMg": {
+    "translation": "Free offline watermark tool for images - Add text watermarks locally without uploading. Your photos never leave your device. Adjust opacity, position, and font styles with complete privacy. No upload, no registration required.",
+    "message": "Free offline watermark tool for images - Add text watermarks locally without uploading. Your photos never leave your device. Adjust opacity, position, and font styles with complete privacy. No upload, no registration required.",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        34
+      ]
+    ]
+  },
+  "FYlHHU": {
+    "translation": "Gold",
+    "message": "Gold",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        98
+      ]
+    ]
+  },
+  "luGcLX": {
+    "translation": "Health & Medical Records:",
+    "message": "Health & Medical Records:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        171
+      ]
+    ]
+  },
+  "Y+liPh": {
+    "translation": "Healthcare providers can watermark patient documents to maintain privacy and prevent unauthorized access to medical information.",
+    "message": "Healthcare providers can watermark patient documents to maintain privacy and prevent unauthorized access to medical information.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        173
+      ]
+    ]
+  },
+  "9Egg8e": {
+    "translation": "How Watermarking Can Benefit Real-Life Scenarios",
+    "message": "How Watermarking Can Benefit Real-Life Scenarios",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        111
+      ]
+    ]
+  },
+  "l36CB4": {
+    "translation": "ID Copy Only",
+    "message": "ID Copy Only",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        55
+      ]
+    ]
+  },
+  "sxWpfX": {
+    "translation": "Image + Watermark",
+    "message": "Image + Watermark",
+    "comments": [],
+    "origin": [
+      [
+        "components/PageFooter.tsx",
+        23
+      ],
+      [
+        "components/PageHeader.tsx",
+        27
+      ]
+    ]
+  },
+  "RZhdmI": {
+    "translation": "Image + Watermark",
+    "message": "Image + Watermark",
+    "comments": [],
+    "origin": [
+      [
+        "components/PageFooter.tsx",
+        23
+      ]
+    ],
+    "obsolete": true
+  },
+  "jzJEKQ": {
+    "translation": "Image + Watermark - Add Text Watermarks Locally",
+    "message": "Image + Watermark - Add Text Watermarks Locally",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        27
+      ]
+    ]
+  },
+  "Prf+DV": {
+    "translation": "Image loaded successfully",
+    "message": "Image loaded successfully",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        75
+      ]
+    ]
+  },
+  "Xr1Mcz": {
+    "translation": "Image pasted successfully",
+    "message": "Image pasted successfully",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        136
+      ]
+    ]
+  },
+  "sePO8K": {
+    "translation": "Image size should be less than 10MB",
+    "message": "Image size should be less than 10MB",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        35
+      ]
+    ]
+  },
+  "AGZmwV": {
+    "translation": "Image uploaded successfully",
+    "message": "Image uploaded successfully",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        44
+      ]
+    ]
+  },
+  "VyUuZb": {
+    "translation": "Image URL",
+    "message": "Image URL",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        165
+      ]
+    ]
+  },
+  "5TAfWD": {
+    "translation": "In today's digital world, sharing images has become a common part of our daily lives. Whether it's personal photos, family pictures, or photos you want to share with friends or clients, watermarking is a simple yet effective way to protect your images from unauthorized use. By applying watermarks directly on your device, you can ensure that your images stay private and secure, without the need to upload them to external servers.",
+    "message": "In today's digital world, sharing images has become a common part of our daily lives. Whether it's personal photos, family pictures, or photos you want to share with friends or clients, watermarking is a simple yet effective way to protect your images from unauthorized use. By applying watermarks directly on your device, you can ensure that your images stay private and secure, without the need to upload them to external servers.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        25
+      ]
+    ]
+  },
+  "i7NS4e": {
+    "translation": "Independent adjustment",
+    "message": "Independent adjustment",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        393
+      ]
+    ]
+  },
+  "DXDd3D": {
+    "translation": "Instant Preview:",
+    "message": "Instant Preview:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        242
+      ]
+    ]
+  },
+  "8C7XjY": {
+    "translation": "Internal Document - Do Not Share",
+    "message": "Internal Document - Do Not Share",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        61
+      ]
+    ]
+  },
+  "Xo4tk5": {
+    "translation": "Landlords can protect images of their properties when posting online, preventing unauthorized use in other listings.",
+    "message": "Landlords can protect images of their properties when posting online, preventing unauthorized use in other listings.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        125
+      ]
+    ]
+  },
+  "XrWB4/": {
+    "translation": "Legal Documents:",
+    "message": "Legal Documents:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        181
+      ]
+    ]
+  },
+  "xa/b9m": {
+    "translation": "Light Gray",
+    "message": "Light Gray",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        63
+      ]
+    ]
+  },
+  "H8r7yo": {
+    "translation": "Lightning-Fast Processing:",
+    "message": "Lightning-Fast Processing:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        276
+      ]
+    ]
+  },
+  "pIo4gz": {
+    "translation": "Lime Green",
+    "message": "Lime Green",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        88
+      ]
+    ]
+  },
+  "ofeJC+": {
+    "translation": "Load Image",
+    "message": "Load Image",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        227
+      ]
+    ]
+  },
+  "DHAPHM": {
+    "translation": "Load system fonts",
+    "message": "Load system fonts",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        273
+      ]
+    ]
+  },
+  "yvgZuh": {
+    "translation": "Loading system fonts...",
+    "message": "Loading system fonts...",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        236
+      ]
+    ]
+  },
+  "Z3FXyt": {
+    "translation": "Loading...",
+    "message": "Loading...",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        224
+      ]
+    ]
+  },
+  "cXZHWR": {
+    "translation": "local image watermark",
+    "message": "local image watermark",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        40
+      ]
+    ]
+  },
+  "7pPaaJ": {
+    "translation": "Local offline processing: Drag & drop files, browse local images or paste image URL. Supports JPG, PNG and WebP formats. Your privacy is guaranteed.",
+    "message": "Local offline processing: Drag & drop files, browse local images or paste image URL. Supports JPG, PNG and WebP formats. Your privacy is guaranteed.",
+    "comments": [],
+    "origin": [
+      [
+        "components/HeroContent.tsx",
+        33
+      ]
+    ]
+  },
+  "aqqUAk": {
+    "translation": "local photo processing",
+    "message": "local photo processing",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        46
+      ]
+    ]
+  },
+  "2/lk3B": {
+    "translation": "Maintain complete control over your visual assets with offline processing that prevents data breaches.",
+    "message": "Maintain complete control over your visual assets with offline processing that prevents data breaches.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        296
+      ]
+    ]
+  },
+  "bb8om6": {
+    "translation": "Maintain Full Control:",
+    "message": "Maintain Full Control:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        59
+      ]
+    ]
+  },
+  "a52aAG": {
+    "translation": "Maximum Security:",
+    "message": "Maximum Security:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        294
+      ]
+    ]
+  },
+  "kJFwN6": {
+    "translation": "Medium Gray",
+    "message": "Medium Gray",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        68
+      ]
+    ]
+  },
+  "Ox4hpP": {
+    "translation": "Medium Purple",
+    "message": "Medium Purple",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        93
+      ]
+    ]
+  },
+  "UAmiha": {
+    "translation": "Moderate purple for creative documents",
+    "message": "Moderate purple for creative documents",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        94
+      ]
+    ]
+  },
+  "mPglw+": {
+    "translation": "Neutral gray for balanced appearance",
+    "message": "Neutral gray for balanced appearance",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        69
+      ]
+    ]
+  },
+  "65Ug6r": {
+    "translation": "no upload watermark",
+    "message": "no upload watermark",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        42
+      ]
+    ]
+  },
+  "DM7xTc": {
+    "translation": "Offline Capability:",
+    "message": "Offline Capability:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        285
+      ]
+    ]
+  },
+  "OB3KpL": {
+    "translation": "Offline Image Watermark",
+    "message": "Offline Image Watermark",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        100
+      ]
+    ]
+  },
+  "SRQOm0": {
+    "translation": "Offline Image Watermark - Add Watermarks Privately Without Uploading",
+    "message": "Offline Image Watermark - Add Watermarks Privately Without Uploading",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        74
+      ]
+    ]
+  },
+  "gLl21r": {
+    "translation": "Offline Image Watermark - Private Watermarking Without Upload",
+    "message": "Offline Image Watermark - Private Watermarking Without Upload",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        90
+      ]
+    ]
+  },
+  "T5XOGi": {
+    "translation": "Offline Image Watermark Tool - Private & Secure",
+    "message": "Offline Image Watermark Tool - Private & Secure",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        81
+      ]
+    ]
+  },
+  "bGLB4t": {
+    "translation": "offline photo editor",
+    "message": "offline photo editor",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        50
+      ]
+    ]
+  },
+  "cFPaFR": {
+    "translation": "offline watermark",
+    "message": "offline watermark",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        39
+      ]
+    ]
+  },
+  "aa/6HI": {
+    "translation": "Offline watermarking gives you full control over your images—everything stays on your device, and you can manage your photos privately and securely.",
+    "message": "Offline watermarking gives you full control over your images—everything stays on your device, and you can manage your photos privately and securely.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        61
+      ]
+    ]
+  },
+  "Qb8BfV": {
+    "translation": "Online Job Applications:",
+    "message": "Online Job Applications:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        142
+      ]
+    ]
+  },
+  "aoLy25": {
+    "translation": "Opacity",
+    "message": "Opacity",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        434
+      ]
+    ]
+  },
+  "IiU0mi": {
+    "translation": "Personal Use",
+    "message": "Personal Use",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        75
+      ]
+    ]
+  },
+  "W6qFYz": {
+    "translation": "Personalize your watermark with text, adjust opacity, size, and position. Preview changes in real-time for the perfect result.",
+    "message": "Personalize your watermark with text, adjust opacity, size, and position. Preview changes in real-time for the perfect result.",
+    "comments": [],
+    "origin": [
+      [
+        "components/HeroContent.tsx",
+        55
+      ]
+    ]
+  },
+  "dlCx/p": {
+    "translation": "Place watermark in the bottom left corner",
+    "message": "Place watermark in the bottom left corner",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        116
+      ]
+    ]
+  },
+  "HFHWs8": {
+    "translation": "Place watermark in the bottom right corner",
+    "message": "Place watermark in the bottom right corner",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        121
+      ]
+    ]
+  },
+  "xOGUOK": {
+    "translation": "Place watermark in the middle of the image",
+    "message": "Place watermark in the middle of the image",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        91
+      ]
+    ]
+  },
+  "Lc+4rJ": {
+    "translation": "Place watermark in the top left corner",
+    "message": "Place watermark in the top left corner",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        106
+      ]
+    ]
+  },
+  "+Y21CX": {
+    "translation": "Place watermark in the top right corner",
+    "message": "Place watermark in the top right corner",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        111
+      ]
+    ]
+  },
+  "WSRb/y": {
+    "translation": "Please enter an image URL",
+    "message": "Please enter an image URL",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        52
+      ]
+    ]
+  },
+  "wdZZIf": {
+    "translation": "Please upload an image file",
+    "message": "Please upload an image file",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        30
+      ]
+    ]
+  },
+  "eVFYcD": {
+    "translation": "Powerful Customization Options for Your Watermarks",
+    "message": "Powerful Customization Options for Your Watermarks",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        204
+      ]
+    ]
+  },
+  "AkdcQL": {
+    "translation": "Precise Placement & Rotation:",
+    "message": "Precise Placement & Rotation:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        224
+      ]
+    ]
+  },
+  "fQCmSv": {
+    "translation": "Prevent Unauthorized Use:",
+    "message": "Prevent Unauthorized Use:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        48
+      ]
+    ]
+  },
+  "G17D5L": {
+    "translation": "Preview your watermark in real-time before applying it to your images.",
+    "message": "Preview your watermark in real-time before applying it to your images.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        244
+      ]
+    ]
+  },
+  "N5Xm6p": {
+    "translation": "Privacy-focused Image Tools",
+    "message": "Privacy-focused Image Tools",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        97
+      ]
+    ]
+  },
+  "27wP7q": {
+    "translation": "Private & Offline",
+    "message": "Private & Offline",
+    "comments": [],
+    "origin": [
+      [
+        "components/PageHeader.tsx",
+        43
+      ]
+    ]
+  },
+  "HpEb0o": {
+    "translation": "private image tool",
+    "message": "private image tool",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        49
+      ]
+    ]
+  },
+  "B9x57b": {
+    "translation": "private photo watermark",
+    "message": "private photo watermark",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        45
+      ]
+    ]
+  },
+  "ppgYRP": {
+    "translation": "private watermark tool",
+    "message": "private watermark tool",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        41
+      ]
+    ]
+  },
+  "MTLuK+": {
+    "translation": "Protect personal documents (e.g., resumes, ID scans) when submitting them to employers or HR departments, ensuring confidentiality and security.",
+    "message": "Protect personal documents (e.g., resumes, ID scans) when submitting them to employers or HR departments, ensuring confidentiality and security.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        134
+      ]
+    ]
+  },
+  "0b0KGu": {
+    "translation": "Protect Your Images with Secure Offline Watermarking",
+    "message": "Protect Your Images with Secure Offline Watermarking",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        13
+      ]
+    ]
+  },
+  "7f50zd": {
+    "translation": "Protect your images with watermarks in under a minute",
+    "message": "Protect your images with watermarks in under a minute",
+    "comments": [],
+    "origin": [
+      [
+        "components/HeroContent.tsx",
+        13
+      ]
+    ]
+  },
+  "X+ojDe": {
+    "translation": "Protect Your Privacy:",
+    "message": "Protect Your Privacy:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        38
+      ]
+    ]
+  },
+  "YJcvQd": {
+    "translation": "Quick preset examples",
+    "message": "Quick preset examples",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        127
+      ]
+    ]
+  },
+  "H1jJ11": {
+    "translation": "Quickly Presets",
+    "message": "Quickly Presets",
+    "comments": [],
+    "origin": [
+      [
+        "components/PageHeader.tsx",
+        49
+      ]
+    ]
+  },
+  "zk+XKJ": {
+    "translation": "Real Estate Transactions:",
+    "message": "Real Estate Transactions:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        162
+      ]
+    ]
+  },
+  "FM9nmc": {
+    "translation": "Rental Property Listings:",
+    "message": "Rental Property Listings:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        123
+      ]
+    ]
+  },
+  "EbwKO0": {
+    "translation": "Residents can watermark personal identification or entry forms when submitting them for community access or gate passes, protecting sensitive information.",
+    "message": "Residents can watermark personal identification or entry forms when submitting them for community access or gate passes, protecting sensitive information.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        154
+      ]
+    ]
+  },
+  "exWyD0": {
+    "translation": "Rotation",
+    "message": "Rotation",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        451
+      ]
+    ]
+  },
+  "LcJmOR": {
+    "translation": "Sample",
+    "message": "Sample",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        85
+      ]
+    ]
+  },
+  "9YUjk9": {
+    "translation": "Sample Document",
+    "message": "Sample Document",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        86
+      ]
+    ]
+  },
+  "p7WV1b": {
+    "translation": "secure image watermark",
+    "message": "secure image watermark",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        44
+      ]
+    ]
+  },
+  "bAiEJP": {
+    "translation": "Select Image",
+    "message": "Select Image",
+    "comments": [],
+    "origin": [
+      [
+        "components/HeroContent.tsx",
+        27
+      ]
+    ]
+  },
+  "rIp4p7": {
+    "translation": "Soft gray for unobtrusive text",
+    "message": "Soft gray for unobtrusive text",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        64
+      ]
+    ]
+  },
+  "W7urZk": {
+    "translation": "Strengthen Your Personal Brand:",
+    "message": "Strengthen Your Personal Brand:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        69
+      ]
+    ]
+  },
+  "YPM0s3": {
+    "translation": "Students can watermark their assignments or projects to protect against unauthorized sharing or plagiarism.",
+    "message": "Students can watermark their assignments or projects to protect against unauthorized sharing or plagiarism.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        193
+      ]
+    ]
+  },
+  "u4jdXa": {
+    "translation": "Submitting Documents to HR:",
+    "message": "Submitting Documents to HR:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        132
+      ]
+    ]
+  },
+  "5i7CmK": {
+    "translation": "Supports JPG, PNG, WebP ...",
+    "message": "Supports JPG, PNG, WebP ...",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        180
+      ]
+    ]
+  },
+  "gNgTDC": {
+    "translation": "Sync adjustment",
+    "message": "Sync adjustment",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        391
+      ]
+    ]
+  },
+  "EkdmEo": {
+    "translation": "System fonts not supported in this browser",
+    "message": "System fonts not supported in this browser",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        240
+      ]
+    ]
+  },
+  "9JbLtQ": {
+    "translation": "Tile Pattern",
+    "message": "Tile Pattern",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        85
+      ]
+    ]
+  },
+  "y2tY/h": {
+    "translation": "Tomato Red",
+    "message": "Tomato Red",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        83
+      ]
+    ]
+  },
+  "k7X3Z+": {
+    "translation": "Top Center",
+    "message": "Top Center",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        95
+      ]
+    ]
+  },
+  "J6FDgI": {
+    "translation": "Top Left",
+    "message": "Top Left",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        105
+      ]
+    ]
+  },
+  "t9lePG": {
+    "translation": "Top Right",
+    "message": "Top Right",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        110
+      ]
+    ]
+  },
+  "9Xigls": {
+    "translation": "Under Review",
+    "message": "Under Review",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkText.tsx",
+        70
+      ],
+      [
+        "components/WatermarkText.tsx",
+        71
+      ]
+    ]
+  },
+  "8tOHkv": {
+    "translation": "University Submissions:",
+    "message": "University Submissions:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        191
+      ]
+    ]
+  },
+  "lnCMdg": {
+    "translation": "Upload Image",
+    "message": "Upload Image",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        161
+      ]
+    ]
+  },
+  "IYbuuf": {
+    "translation": "Upload Your Image",
+    "message": "Upload Your Image",
+    "comments": [],
+    "origin": [
+      [
+        "components/ImageUploader.tsx",
+        150
+      ]
+    ]
+  },
+  "PK1yir": {
+    "translation": "Vibrant red for attention-grabbing",
+    "message": "Vibrant red for attention-grabbing",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        84
+      ]
+    ]
+  },
+  "hy6L14": {
+    "translation": "View on GitHub",
+    "message": "View on GitHub",
+    "comments": [],
+    "origin": [
+      [
+        "components/PageFooter.tsx",
+        39
+      ]
+    ]
+  },
+  "BSfDFm": {
+    "translation": "Visible watermarks make your images less appealing to thieves or unauthorized users, significantly reducing the likelihood of theft or misuse.",
+    "message": "Visible watermarks make your images less appealing to thieves or unauthorized users, significantly reducing the likelihood of theft or misuse.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        91
+      ]
+    ]
+  },
+  "o5uAJW": {
+    "translation": "Watermark Color",
+    "message": "Watermark Color",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        405
+      ]
+    ]
+  },
+  "21Nw5G": {
+    "translation": "Watermark Colors",
+    "message": "Watermark Colors",
+    "comments": [],
+    "origin": [
+      [
+        "components/ColorPicker.tsx",
+        158
+      ]
+    ]
+  },
+  "+Isg7r": {
+    "translation": "Watermark Grid (Horizontal × Vertical)",
+    "message": "Watermark Grid (Horizontal × Vertical)",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        338
+      ]
+    ]
+  },
+  "dhoFKo": {
+    "translation": "Watermark images of properties during transactions, ensuring they are not copied or redistributed without permission.",
+    "message": "Watermark images of properties during transactions, ensuring they are not copied or redistributed without permission.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        164
+      ]
+    ]
+  },
+  "Jr8AtU": {
+    "translation": "Watermark Position",
+    "message": "Watermark Position",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        303
+      ]
+    ]
+  },
+  "IHyvut": {
+    "translation": "Watermark sensitive information such as cover letters, resumes, or portfolio samples to ensure they cannot be misused or repurposed.",
+    "message": "Watermark sensitive information such as cover letters, resumes, or portfolio samples to ensure they cannot be misused or repurposed.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        144
+      ]
+    ]
+  },
+  "4ObCMk": {
+    "translation": "Watermark Settings",
+    "message": "Watermark Settings",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        199
+      ]
+    ]
+  },
+  "2+NxRS": {
+    "translation": "Watermark Text",
+    "message": "Watermark Text",
+    "comments": [],
+    "origin": [
+      [
+        "components/WatermarkControls.tsx",
+        216
+      ]
+    ]
+  },
+  "AOtlJx": {
+    "translation": "watermark without upload",
+    "message": "watermark without upload",
+    "comments": [],
+    "origin": [
+      [
+        "app/[lang]/layout.tsx",
+        48
+      ]
+    ]
+  },
+  "cmVFfH": {
+    "translation": "Watermark your images even without an internet connection, ensuring flexibility and control.",
+    "message": "Watermark your images even without an internet connection, ensuring flexibility and control.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        287
+      ]
+    ]
+  },
+  "oISGVV": {
+    "translation": "Watermarking is not just for photographers and businesses. It can be a valuable tool in many everyday situations:",
+    "message": "Watermarking is not just for photographers and businesses. It can be a valuable tool in many everyday situations:",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        115
+      ]
+    ]
+  },
+  "vtTRDo": {
+    "translation": "Watermarking your images directly on your device ensures they stay private and secure, preventing unauthorized access or sharing without your consent.",
+    "message": "Watermarking your images directly on your device ensures they stay private and secure, preventing unauthorized access or sharing without your consent.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        40
+      ]
+    ]
+  },
+  "k7jQQZ": {
+    "translation": "Watermarks make it easy to trace the source of your images if they are shared or reposted online, helping you keep track of your original content.",
+    "message": "Watermarks make it easy to trace the source of your images if they are shared or reposted online, helping you keep track of your original content.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        81
+      ]
+    ]
+  },
+  "SDrl9l": {
+    "translation": "Why Watermarking is Essential for Protecting Your Images",
+    "message": "Why Watermarking is Essential for Protecting Your Images",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        19
+      ]
+    ]
+  },
+  "FXw2hk": {
+    "translation": "With offline watermarking, you can protect your personal or professional images with ease and peace of mind, knowing that your content stays safe on your device at all times. No uploads, no risks—just full control and security over your images.",
+    "message": "With offline watermarking, you can protect your personal or professional images with ease and peace of mind, knowing that your content stays safe on your device at all times. No uploads, no risks—just full control and security over your images.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        99
+      ]
+    ]
+  },
+  "/trP/W": {
+    "translation": "Your images stay local, with no need to upload them to external servers.",
+    "message": "Your images stay local, with no need to upload them to external servers.",
+    "comments": [],
+    "origin": [
+      [
+        "components/AccordionInfo.tsx",
+        269
+      ]
+    ]
+  },
+  "5/yex+": {
+    "translation": "简体中文",
+    "message": "简体中文",
+    "comments": [],
+    "origin": [
+      [
+        "components/i18n/Switcher.tsx",
+        15
+      ]
+    ]
+  }
+}

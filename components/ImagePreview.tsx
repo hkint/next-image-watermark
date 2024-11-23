@@ -1,48 +1,50 @@
-'use client';
+'use client'
 
-import { Download, Copy } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { toast } from 'sonner';
+import { Download, Copy } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { toast } from 'sonner'
+
+import { Trans } from '@lingui/macro'
 
 interface ImagePreviewProps {
-  processedImage: string;
+  processedImage: string
 }
 
 export function ImagePreview({ processedImage }: ImagePreviewProps) {
   const handleDownload = () => {
     if (processedImage) {
-      const link = document.createElement('a');
-      link.href = processedImage;
-      link.download = 'watermarked-image.png';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      toast.success('Image downloading');
+      const link = document.createElement('a')
+      link.href = processedImage
+      link.download = 'watermarked-image.png'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      toast.success('Image downloading')
     }
-  };
+  }
 
   const handleCopyToClipboard = async () => {
     if (processedImage) {
       try {
-        const response = await fetch(processedImage);
-        const blob = await response.blob();
+        const response = await fetch(processedImage)
+        const blob = await response.blob()
         await navigator.clipboard.write([
           new ClipboardItem({
-            [blob.type]: blob,
-          }),
-        ]);
+            [blob.type]: blob
+          })
+        ])
         toast.success('Image copied to clipboard', {
           description: 'You can now paste the image anywhere',
-          duration: 3000,
-        });
+          duration: 3000
+        })
       } catch (err) {
         toast.error('Failed to copy image', {
           description: 'Please try download instead',
-          duration: 3000,
-        });
+          duration: 3000
+        })
       }
     }
-  };
+  }
 
   return (
     <div className="max-w-5xl mx-auto space-y-6">
@@ -67,7 +69,7 @@ export function ImagePreview({ processedImage }: ImagePreviewProps) {
           disabled={!processedImage}
         >
           <Download className="mr-2 h-5 w-5" />
-          Download Image
+          <Trans>Download Image</Trans>
         </Button>
         <Button
           size="lg"
@@ -77,9 +79,9 @@ export function ImagePreview({ processedImage }: ImagePreviewProps) {
           disabled={!processedImage}
         >
           <Copy className="mr-2 h-5 w-5" />
-          Copy to Clipboard
+          <Trans>Copy to Clipboard</Trans>
         </Button>
       </div>
     </div>
-  );
+  )
 }

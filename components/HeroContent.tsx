@@ -1,4 +1,5 @@
 import { Upload, Palette, Download, ChevronRight } from 'lucide-react';
+import { Trans } from '@lingui/macro';
 
 export function HeroContent() {
   return (
@@ -6,10 +7,10 @@ export function HeroContent() {
       {/* Main heading with SEO optimization */}
       <div className="text-center mb-4">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-          Add Watermarks in Three Simple Steps
+          <Trans>Add Watermarks in Three Simple Steps</Trans>
         </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Protect your images with watermarks in under a minute
+          <Trans>Protect your images with watermarks in under a minute</Trans>
         </p>
       </div>
 
@@ -23,15 +24,17 @@ export function HeroContent() {
             </div>
             <div className="ml-4 flex-1">
               <h3 className="font-semibold text-gray-900 flex items-center">
-                Select Image
+                <Trans>Select Image</Trans>
                 <ChevronRight className="w-4 h-4 ml-1 text-gray-400" />
               </h3>
             </div>
           </div>
           <p className="text-gray-600">
-            Local offline processing: Drag & drop files, browse local images or
-            paste image URL. Supports JPG, PNG and WebP formats. Your privacy is
-            guaranteed.
+            <Trans>
+              Local offline processing: Drag & drop files, browse local images or
+              paste image URL. Supports JPG, PNG and WebP formats. Your privacy is
+              guaranteed.
+            </Trans>
           </p>
         </div>
 
@@ -43,14 +46,16 @@ export function HeroContent() {
             </div>
             <div className="ml-4 flex-1">
               <h3 className="font-semibold text-gray-900 flex items-center">
-                Customize Watermark
+                <Trans>Customize Watermark</Trans>
                 <ChevronRight className="w-4 h-4 ml-1 text-gray-400" />
               </h3>
             </div>
           </div>
           <p className="text-gray-600">
-            Design your perfect watermark by customizing text, opacity, size and
-            position. Preview changes in real-time for the best results.
+            <Trans>
+              Personalize your watermark with text, adjust opacity, size, and
+              position. Preview changes in real-time for the perfect result.
+            </Trans>
           </p>
         </div>
 
@@ -62,14 +67,16 @@ export function HeroContent() {
             </div>
             <div className="ml-4 flex-1">
               <h3 className="font-semibold text-gray-900 flex items-center">
-                Export & Download
+                <Trans>Download Result</Trans>
                 <ChevronRight className="w-4 h-4 ml-1 text-gray-400" />
               </h3>
             </div>
           </div>
           <p className="text-gray-600">
-            Download your watermarked image or copy directly to clipboard.
-            Multiple export options available to suit your needs.
+            <Trans>
+              Download or Copy your watermarked image instantly. No data is sent to any
+              server - everything happens right in your browser.
+            </Trans>
           </p>
         </div>
       </div>

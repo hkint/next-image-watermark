@@ -5,10 +5,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "i18n:extract": "lingui extract",
+    "i18n:compile": "lingui compile",
+    "i18n:translate": "ts-node ./scripts/translate-locale.ts",
+    "i18n:auto": "pnpm i18n:extract && pnpm i18n:translate --auto"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
+    "@lingui/core": "^4.14.0",
+    "@lingui/react": "^4.14.0",
     "@next/swc-wasm-nodejs": "15.0.3",
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-alert-dialog": "^1.1.2",
@@ -50,6 +56,7 @@
     "eslint-config-next": "15.0.3",
     "input-otp": "^1.4.1",
     "lucide-react": "^0.460.0",
+    "negotiator": "^1.0.0",
     "next": "^15.0.3",
     "next-themes": "^0.4.3",
     "postcss": "8.4.49",
@@ -57,6 +64,7 @@
     "react-day-picker": "^9.3.2",
     "react-dom": "18.3.1",
     "react-hook-form": "^7.53.2",
+    "react-icons": "^5.3.0",
     "react-resizable-panels": "^2.1.7",
     "recharts": "^2.13.3",
     "sharp": "^0.33.5",
@@ -67,5 +75,16 @@
     "typescript": "5.6.3",
     "vaul": "^1.1.1",
     "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@lingui/cli": "^4.14.0",
+    "@lingui/conf": "^4.14.0",
+    "@lingui/format-json": "^4.14.0",
+    "@lingui/loader": "^4.14.0",
+    "@lingui/macro": "^4.14.0",
+    "@lingui/swc-plugin": "^4.1.0",
+    "@types/negotiator": "^0.6.3",
+    "openai": "^4.73.0",
+    "ts-node": "^10.9.2"
   }
 }
