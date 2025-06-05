@@ -17,7 +17,7 @@ export function HeroContent() {
       {/* Steps grid */}
       <div className="grid gap-8 md:grid-cols-3 mb-4">
         {/* Step 1 */}
-        <div className="relative p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+        <div className="relative p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-center mb-4">
             <div className="w-10 h-10 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full">
               <Upload className="w-5 h-5" />
@@ -39,7 +39,7 @@ export function HeroContent() {
         </div>
 
         {/* Step 2 */}
-        <div className="relative p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+        <div className="relative p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-center mb-4">
             <div className="w-10 h-10 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full">
               <Palette className="w-5 h-5" />
@@ -60,7 +60,7 @@ export function HeroContent() {
         </div>
 
         {/* Step 3 */}
-        <div className="relative p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+        <div className="relative p-6 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-center mb-4">
             <div className="w-10 h-10 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full">
               <Download className="w-5 h-5" />

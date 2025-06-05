@@ -28,6 +28,13 @@ export default withLinguiPage(function Home() {
   const [watermarkGridX, setWatermarkGridX] = useState<number>(6)
   const [watermarkGridY, setWatermarkGridY] = useState<number>(6)
   const [font, setFont] = useState<string>('Arial')
+  const [outputFormat, setOutputFormat] = useState<'png' | 'jpeg'>('png')
+  const [jpegQuality, setJpegQuality] = useState<number[]>([92]) // Slider expects an array
+  const [watermarkType, setWatermarkType] = useState<'text' | 'image'>('text')
+  const [watermarkImage, setWatermarkImage] = useState<string>('')
+  const [watermarkImageOpacity, setWatermarkImageOpacity] = useState<number[]>([40])
+  const [watermarkImageScale, setWatermarkImageScale] = useState<number[]>([10])
+
 
   const watermarkControlsRef = useRef<HTMLDivElement>(null)
 
@@ -50,20 +57,60 @@ export default withLinguiPage(function Home() {
       rotation: rotation[0],
       watermarkGridX,
       watermarkGridY,
-      font
+      font,
+      outputFormat,
+      quality: jpegQuality[0],
+      watermarkType,
+      watermarkImage,
+      watermarkImageOpacity: watermarkImageOpacity[0],
+      watermarkImageScale: watermarkImageScale[0],
+      onComplete: (result) => {
+        if (result.success && result.dataUrl) {
+          setProcessedImage(result.dataUrl);
+        } else {
+          const errorMsg = result.errorKey
+            ? t(i18n)._(result.errorKey as any) // TODO: Fix i18n typing here if Lingui macros allow direct key usage
+            : result.errorMessage || t(i18n)._('defaultImageProcessingError' as any);
+          toast.error(errorMsg);
+          if (result.dataUrl) { // E.g. logo failed but main image processed
+            setProcessedImage(result.dataUrl);
+          }
+          // Consider if setProcessedImage('') is needed on total failure
+        }
+      }
     }
 
     if (!image) {
-      const result = createBlankCanvasWithWatermark(watermarkOptions)
-      setProcessedImage(result)
+      // createBlankCanvasWithWatermark now also uses onComplete
+      createBlankCanvasWithWatermark(watermarkOptions)
+      // setProcessedImage is called within onComplete if successful
     } else {
       processWatermark({
         ...watermarkOptions,
         imageUrl: image,
-        onProcessed: setProcessedImage
+        // onComplete is already part of watermarkOptions
       })
     }
-  }, [image, watermark, position, color, fontSize, opacity, rotation, watermarkGridX, watermarkGridY, font])
+  }, [
+    image,
+    watermark,
+    position,
+    color,
+    fontSize,
+    opacity,
+    rotation,
+    watermarkGridX,
+    watermarkGridY,
+    font,
+    outputFormat,
+    jpegQuality,
+    watermarkType,
+    watermarkImage,
+    watermarkImageOpacity,
+    watermarkImageScale,
+    i18n, // i18n is used in onComplete
+    t // t is used in onComplete
+  ])
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-indigo-100 to-white">
@@ -94,8 +141,23 @@ export default withLinguiPage(function Home() {
               onWatermarkGridXChange={setWatermarkGridX}
               onWatermarkGridYChange={setWatermarkGridY}
               onFontChange={setFont}
+              // Image watermark props
+              watermarkType={watermarkType}
+              setWatermarkType={setWatermarkType}
+              watermarkImage={watermarkImage}
+              setWatermarkImage={setWatermarkImage}
+              watermarkImageOpacity={watermarkImageOpacity}
+              setWatermarkImageOpacity={setWatermarkImageOpacity}
+              watermarkImageScale={watermarkImageScale}
+              setWatermarkImageScale={setWatermarkImageScale}
             />
-            <ImagePreview processedImage={processedImage} />
+            <ImagePreview
+              processedImage={processedImage}
+              outputFormat={outputFormat}
+              setOutputFormat={setOutputFormat}
+              jpegQuality={jpegQuality}
+              setJpegQuality={setJpegQuality}
+            />
           </div>
   
           <AccordionInfo />

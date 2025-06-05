@@ -1,4 +1,162 @@
 {
+  "proxyConfirmTitle": {
+    "translation": "Image Fetch Confirmation",
+    "message": "Image Fetch Confirmation",
+    "comments": [],
+    "origin": [
+      ["components/ImageUploader.tsx", 0]
+    ]
+  },
+  "proxyConfirmDescription": {
+    "translation": "To bypass browser limitations, this image will be fetched through our server, but we will not store your image.",
+    "message": "To bypass browser limitations, this image will be fetched through our server, but we will not store your image.",
+    "comments": [],
+    "origin": [
+      ["components/ImageUploader.tsx", 0]
+    ]
+  },
+  "proxyConfirmCancel": {
+    "translation": "Cancel",
+    "message": "Cancel",
+    "comments": [],
+    "origin": [
+      ["components/ImageUploader.tsx", 0]
+    ]
+  },
+  "proxyConfirmContinue": {
+    "translation": "Continue",
+    "message": "Continue",
+    "comments": [],
+    "origin": [
+      ["components/ImageUploader.tsx", 0]
+    ]
+  },
+  "outputFormatLabel": {
+    "translation": "Output Format",
+    "message": "Output Format",
+    "comments": [],
+    "origin": [["components/ImagePreview.tsx", 0]]
+  },
+  "formatPng": {
+    "translation": "PNG",
+    "message": "PNG",
+    "comments": [],
+    "origin": [["components/ImagePreview.tsx", 0]]
+  },
+  "formatJpeg": {
+    "translation": "JPEG",
+    "message": "JPEG",
+    "comments": [],
+    "origin": [["components/ImagePreview.tsx", 0]]
+  },
+  "jpegQualityLabel": {
+    "translation": "JPEG Quality",
+    "message": "JPEG Quality",
+    "comments": [],
+    "origin": [["components/ImagePreview.tsx", 0]]
+  },
+  "watermarkTypeLabel": {
+    "translation": "Watermark Type",
+    "message": "Watermark Type",
+    "comments": [],
+    "origin": [["components/WatermarkControls.tsx", 0]]
+  },
+  "typeText": {
+    "translation": "Text",
+    "message": "Text",
+    "comments": [],
+    "origin": [["components/WatermarkControls.tsx", 0]]
+  },
+  "typeImage": {
+    "translation": "Image/Logo",
+    "message": "Image/Logo",
+    "comments": [],
+    "origin": [["components/WatermarkControls.tsx", 0]]
+  },
+  "uploadLogoLabel": {
+    "translation": "Upload Logo",
+    "message": "Upload Logo",
+    "comments": [],
+    "origin": [["components/WatermarkControls.tsx", 0]]
+  },
+  "logoUploadSuccess": {
+    "translation": "Logo uploaded successfully.",
+    "message": "Logo uploaded successfully.",
+    "comments": [],
+    "origin": [["components/WatermarkControls.tsx", 0]]
+  },
+  "logoTooLargeError": {
+    "translation": "Logo image is too large (max 2MB).",
+    "message": "Logo image is too large (max 2MB).",
+    "comments": [],
+    "origin": [["components/WatermarkControls.tsx", 0]]
+  },
+  "logoInvalidFileError": {
+    "translation": "Invalid file type for logo. Please use PNG, JPEG, or WEBP.",
+    "message": "Invalid file type for logo. Please use PNG, JPEG, or WEBP.",
+    "comments": [],
+    "origin": [["components/WatermarkControls.tsx", 0]]
+  },
+  "failedToReadLogoFile": {
+    "translation": "Failed to read logo file.",
+    "message": "Failed to read logo file.",
+    "comments": [],
+    "origin": [["components/WatermarkControls.tsx", 0]]
+  },
+  "logoOpacityLabel": {
+    "translation": "Logo Opacity",
+    "message": "Logo Opacity",
+    "comments": [],
+    "origin": [["components/WatermarkControls.tsx", 0]]
+  },
+  "logoScaleLabel": {
+    "translation": "Logo Scale",
+    "message": "Logo Scale",
+    "comments": [],
+    "origin": [["components/WatermarkControls.tsx", 0]]
+  },
+  "removeLogo": {
+    "translation": "Remove logo",
+    "message": "Remove logo",
+    "comments": [],
+    "origin": [["components/WatermarkControls.tsx", 0]]
+  },
+  "canvasContextError": {
+    "translation": "Error initializing image canvas. Please try refreshing.",
+    "message": "Error initializing image canvas. Please try refreshing.",
+    "comments": [],
+    "origin": [["lib/watermark.ts", 0]]
+  },
+  "mainImageLoadError": {
+    "translation": "Error loading main image. The file may be corrupted or in an unsupported format.",
+    "message": "Error loading main image. The file may be corrupted or in an unsupported format.",
+    "comments": [],
+    "origin": [["lib/watermark.ts", 0]]
+  },
+  "logoImageLoadError": {
+    "translation": "Error loading logo image. The file may be corrupted or unsupported. Watermarking will proceed without logo.",
+    "message": "Error loading logo image. The file may be corrupted or unsupported. Watermarking will proceed without logo.",
+    "comments": [],
+    "origin": [["lib/watermark.ts", 0]]
+  },
+  "canvasDrawingError": {
+    "translation": "An error occurred while applying the watermark. Please check image and settings.",
+    "message": "An error occurred while applying the watermark. Please check image and settings.",
+    "comments": [],
+    "origin": [["lib/watermark.ts", 0]]
+  },
+  "imageExportError": {
+    "translation": "Error finalizing watermarked image. Please try again.",
+    "message": "Error finalizing watermarked image. Please try again.",
+    "comments": [],
+    "origin": [["lib/watermark.ts", 0]]
+  },
+  "defaultImageProcessingError": {
+    "translation": "Image processing failed. Please check the file or try again.",
+    "message": "Image processing failed. Please check the file or try again.",
+    "comments": [],
+    "origin": [["app/[lang]/page.tsx", 0]]
+  },
   "J/hVSQ": {
     "translation": "{0}",
     "message": "{0}",
@@ -837,15 +995,12 @@
       ]
     ]
   },
-  "sePO8K": {
-    "translation": "Image size should be less than 10MB",
-    "message": "Image size should be less than 10MB",
+  "largeFileWarningAndBlocked": {
+    "translation": "File exceeds 10MB limit. Processing large files can cause slowdowns. The file will not be processed.",
+    "message": "File exceeds 10MB limit. Processing large files can cause slowdowns. The file will not be processed.",
     "comments": [],
     "origin": [
-      [
-        "components/ImageUploader.tsx",
-        35
-      ]
+      ["components/ImageUploader.tsx", 0]
     ]
   },
   "AGZmwV": {

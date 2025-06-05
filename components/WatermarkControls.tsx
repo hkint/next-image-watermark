@@ -77,7 +77,22 @@ interface WatermarkControlsProps {
   onWatermarkGridXChange: (value: number) => void
   onWatermarkGridYChange: (value: number) => void
   onFontChange: (value: string) => void
+  // Image watermark specific props
+  watermarkType: 'text' | 'image'
+  setWatermarkType: (type: 'text' | 'image') => void
+  watermarkImage: string
+  setWatermarkImage: (image: string) => void
+  watermarkImageOpacity: number[]
+  setWatermarkImageOpacity: (opacity: number[]) => void
+  watermarkImageScale: number[]
+  setWatermarkImageScale: (scale: number[]) => void
 }
+
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+import { Input } from '@/components/ui/input'
+import { Image as ImageIcon, Trash2 } from 'lucide-react' // Using ImageIcon for consistency
+import { toast } from 'sonner'
+import { useLingui } from '@lingui/react'
 
 const POSITION_OPTIONS = [
   {
@@ -160,18 +175,56 @@ const WatermarkControls = ({
   onRotationChange,
   onWatermarkGridXChange,
   onWatermarkGridYChange,
-  onFontChange
+  onFontChange,
+  // Image watermark props
+  watermarkType,
+  setWatermarkType,
+  watermarkImage,
+  setWatermarkImage,
+  watermarkImageOpacity,
+  setWatermarkImageOpacity,
+  watermarkImageScale,
+  setWatermarkImageScale
 }: WatermarkControlsProps) => {
+  const { i18n } = useLingui()
   const [availableFonts, setAvailableFonts] =
     useState<FontOption[]>(DEFAULT_FONTS)
   const [isLoadingFonts, setIsLoadingFonts] = useState(false)
   const [isApiSupported, setIsApiSupported] = useState(false)
   const [gridSync, setGridSync] = useState(false)
   const [fontsLoaded, setFontsLoaded] = useState(false)
+  const logoInputRef = React.useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     setIsApiSupported('queryLocalFonts' in window)
   }, [])
+
+  const handleLogoUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (file) {
+      if (!['image/png', 'image/jpeg', 'image/webp'].includes(file.type)) {
+        toast.error(t(i18n)`Invalid file type for logo. Please use PNG, JPEG, or WEBP.`)
+        return
+      }
+      if (file.size > 2 * 1024 * 1024) { // 2MB limit for logo
+        toast.error(t(i18n)`Logo image is too large (max 2MB).`)
+        return
+      }
+      const reader = new FileReader()
+      reader.onload = (e) => {
+        setWatermarkImage(e.target?.result as string)
+        toast.success(t(i18n)`Logo uploaded successfully.`)
+      }
+      reader.onerror = () => {
+        toast.error(t(i18n)`Failed to read logo file.`)
+      }
+      reader.readAsDataURL(file)
+    }
+    // Reset file input to allow re-uploading the same file if needed
+    if (logoInputRef.current) {
+      logoInputRef.current.value = ''
+    }
+  }
 
   const loadSystemFonts = async () => {
     try {
@@ -226,68 +279,159 @@ const WatermarkControls = ({
       </CardHeader>
 
       <CardContent className="p-6 pt-0">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Watermark Text */}
-          <div className="space-y-3">
-            <Label
-              htmlFor="watermark"
-              className="text-sm font-medium leading-none"
-            >
-              <Trans>Watermark Text</Trans>
-            </Label>
-            <WatermarkText
-              watermark={watermark}
-              onWatermarkChange={onWatermarkChange}
-            />
-          </div>
+        {/* Watermark Type Selection */}
+        <div className="mb-6">
+          <Label className="text-base font-semibold leading-none mb-3 block">
+            <Trans>Watermark Type</Trans>
+          </Label>
+          <RadioGroup
+            value={watermarkType}
+            onValueChange={(value: 'text' | 'image') => setWatermarkType(value)}
+            className="flex space-x-4"
+          >
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="text" id="type-text" />
+              <Label htmlFor="type-text" className="font-normal">
+                <Trans>Text</Trans>
+              </Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="image" id="type-image" />
+              <Label htmlFor="type-image" className="font-normal">
+                <Trans>Image/Logo</Trans>
+              </Label>
+            </div>
+          </RadioGroup>
+        </div>
 
-          {/* Font Selection */}
-          <div className="space-y-3">
-            <Label className="text-sm font-medium leading-none">
-              <Trans>Font</Trans>
-            </Label>
-            <Select value={font} onValueChange={onFontChange}>
-              <SelectTrigger className="w-full h-12">
-                <SelectValue placeholder="Select font" />
-              </SelectTrigger>
-              <SelectContent>
-                {isLoadingFonts ? (
-                  <div className="flex items-center justify-center py-2 text-sm text-muted-foreground">
-                    <Trans>Loading system fonts...</Trans>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8">
+          {watermarkType === 'text' && (
+            <>
+              {/* Watermark Text */}
+              <div className="space-y-3">
+                <Label htmlFor="watermark" className="text-sm font-medium leading-none">
+                  <Trans>Watermark Text</Trans>
+                </Label>
+                <WatermarkText watermark={watermark} onWatermarkChange={onWatermarkChange} />
+              </div>
+
+              {/* Font Selection */}
+              <div className="space-y-3">
+                <Label className="text-sm font-medium leading-none"><Trans>Font</Trans></Label>
+                <Select value={font} onValueChange={onFontChange}>
+                  <SelectTrigger className="w-full h-12">
+                    <SelectValue placeholder="Select font" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {isLoadingFonts ? (
+                      <div className="flex items-center justify-center py-2 text-sm text-muted-foreground">
+                        <Trans>Loading system fonts...</Trans>
+                      </div>
+                    ) : !isApiSupported ? (
+                      <>
+                        <div className="py-2 px-2 text-sm text-muted-foreground">
+                          <Trans>System fonts not supported in this browser</Trans>
+                        </div>
+                        {availableFonts.map((fontOption) => (
+                          <FontItem key={fontOption.value} fontOption={fontOption} />
+                        ))}
+                      </>
+                    ) : fontsLoaded ? (
+                      availableFonts.map((fontOption) => (
+                        <FontItem key={fontOption.value} fontOption={fontOption} />
+                      ))
+                    ) : (
+                      <>
+                        <div className="flex items-center justify-center py-2">
+                          <Button variant="outline" onClick={loadSystemFonts} className="w-full">
+                            <Trans>Load system fonts</Trans>
+                          </Button>
+                        </div>
+                        {availableFonts.map((fontOption) => (
+                          <FontItem key={fontOption.value} fontOption={fontOption} />
+                        ))}
+                      </>
+                    )}
+                  </SelectContent>
+                </Select>
+              </div>
+
+              {/* Color Picker */}
+              <div className="space-y-3">
+                <Label className="text-sm font-medium leading-none"><Trans>Watermark Color</Trans></Label>
+                <ColorPicker value={color} onChange={onColorChange} aria-label="Watermark color picker" />
+              </div>
+
+              {/* Font Size */}
+              <div className="space-y-3">
+                <Label className="text-sm font-medium leading-none">
+                  <Trans>Font Size</Trans>
+                  <span className="ml-1 text-muted-foreground">{fontSize}px</span>
+                </Label>
+                <Slider value={fontSize} onValueChange={onFontSizeChange} min={20} max={200} step={1} className="py-4 h-12" aria-label="Font size adjustment" />
+              </div>
+
+              {/* Opacity for Text */}
+              <div className="space-y-3">
+                <Label className="text-sm font-medium leading-none">
+                  <Trans>Opacity</Trans>
+                  <span className="ml-1 text-muted-foreground">{opacity}%</span>
+                </Label>
+                <Slider value={opacity} onValueChange={onOpacityChange} min={1} max={100} step={1} className="py-4 h-12" aria-label="Opacity adjustment" />
+              </div>
+            </>
+          )}
+
+          {watermarkType === 'image' && (
+            <>
+              {/* Logo Upload */}
+              <div className="space-y-3 md:col-span-2">
+                <Label htmlFor="logoUpload" className="text-sm font-medium leading-none">
+                  <Trans>Upload Logo</Trans> (PNG, JPG, WEBP - Max 2MB)
+                </Label>
+                <div className="flex items-center space-x-3">
+                  <Input
+                    id="logoUpload"
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp"
+                    onChange={handleLogoUpload}
+                    className="flex-grow cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+                    ref={logoInputRef}
+                  />
+                  {watermarkImage && (
+                     <Button variant="ghost" size="icon" onClick={() => { setWatermarkImage(''); if(logoInputRef.current) logoInputRef.current.value = '';}} title={t(i18n)`Remove logo`}>
+                       <Trash2 className="h-5 w-5 text-red-500" />
+                     </Button>
+                  )}
+                </div>
+                {watermarkImage && (
+                  <div className="mt-3 p-2 border rounded-md inline-block bg-gray-50">
+                    <img src={watermarkImage} alt="Logo Preview" className="h-12 max-w-xs object-contain" />
                   </div>
-                ) : !isApiSupported ? (
-                  <>
-                    <div className="py-2 px-2 text-sm text-muted-foreground">
-                      <Trans>System fonts not supported in this browser</Trans>
-                    </div>
-                    {availableFonts.map((fontOption) => (
-                      <FontItem key={fontOption.value} fontOption={fontOption} />
-                    ))}
-                  </>
-                ) : fontsLoaded ? (
-                  availableFonts.map((fontOption) => (
-                    <FontItem key={fontOption.value} fontOption={fontOption} />
-                  ))
-                ) : (
-                  <>
-                    <div className="flex items-center justify-center py-2">
-                      <Button
-                        variant="outline"
-                        onClick={loadSystemFonts}
-                        className="w-full"
-                      >
-                        <Trans>Load system fonts</Trans>
-                      </Button>
-                    </div>
-                    {availableFonts.map((fontOption) => (
-                      <FontItem key={fontOption.value} fontOption={fontOption} />
-                    ))}
-                  </>
                 )}
-              </SelectContent>
-            </Select>
-          </div>
+              </div>
 
+              {/* Logo Opacity */}
+              <div className="space-y-3">
+                <Label className="text-sm font-medium leading-none">
+                  <Trans>Logo Opacity</Trans>
+                  <span className="ml-1 text-muted-foreground">{watermarkImageOpacity[0]}%</span>
+                </Label>
+                <Slider value={watermarkImageOpacity} onValueChange={setWatermarkImageOpacity} min={1} max={100} step={1} className="py-4 h-12" aria-label="Logo opacity adjustment" />
+              </div>
+
+              {/* Logo Scale */}
+              <div className="space-y-3">
+                <Label className="text-sm font-medium leading-none">
+                  <Trans>Logo Scale</Trans>
+                  <span className="ml-1 text-muted-foreground">{watermarkImageScale[0]}%</span>
+                </Label>
+                <Slider value={watermarkImageScale} onValueChange={setWatermarkImageScale} min={1} max={50} step={1} className="py-4 h-12" aria-label="Logo scale adjustment" />
+              </div>
+            </>
+          )}
+
+          {/* Common Controls: Position, Grid, Rotation */}
           {/* Position Selection */}
           <div className="space-y-3">
             <Label className="text-sm font-medium leading-none">
@@ -296,26 +440,15 @@ const WatermarkControls = ({
             <Select value={position} onValueChange={onPositionChange}>
               <SelectTrigger className="w-full h-12">
                 <SelectValue>
-                  {position ? (
-                    POSITION_OPTIONS.find((option) => option.value === position)
-                      ?.label
-                  ) : (
-                    <Trans>Choose a watermark position</Trans>
-                  )}
+                  {position ? POSITION_OPTIONS.find((option) => option.value === position)?.label : <Trans>Choose a watermark position</Trans>}
                 </SelectValue>
               </SelectTrigger>
               <SelectContent>
                 {POSITION_OPTIONS.map((option) => (
-                  <SelectItem
-                    key={option.value}
-                    value={option.value}
-                    className="py-2.5 h-12"
-                  >
+                  <SelectItem key={option.value} value={option.value} className="py-2.5 h-12">
                     <div className="space-y-0.5">
                       <div className="text-sm font-medium">{option.label}</div>
-                      <div className="text-xs text-muted-foreground">
-                        {option.description}
-                      </div>
+                      <div className="text-xs text-muted-foreground">{option.description}</div>
                     </div>
                   </SelectItem>
                 ))}
@@ -329,128 +462,29 @@ const WatermarkControls = ({
               <Trans>Watermark Grid (Horizontal × Vertical)</Trans>
             </Label>
             <div className="flex items-center space-x-4 h-12">
-              <div className="flex items-center">
-                <NumberInput
-                  value={watermarkGridX}
-                  onChange={(value) => {
-                    onWatermarkGridXChange(value)
-                    if (gridSync) {
-                      onWatermarkGridYChange(value)
-                    }
-                  }}
-                  min={1}
-                  max={20}
-                />
-              </div>
-              <span className="flex items-center justify-center text-muted-foreground">
-                ×
-              </span>
-              <div className="flex items-center">
-                <NumberInput
-                  value={watermarkGridY}
-                  onChange={(value) => {
-                    onWatermarkGridYChange(value)
-                    if (gridSync) {
-                      onWatermarkGridXChange(value)
-                    }
-                  }}
-                  min={1}
-                  max={20}
-                />
-              </div>
+              <NumberInput value={watermarkGridX} onChange={(value) => { onWatermarkGridXChange(value); if (gridSync) onWatermarkGridYChange(value); }} min={1} max={20} />
+              <span className="flex items-center justify-center text-muted-foreground">×</span>
+              <NumberInput value={watermarkGridY} onChange={(value) => { onWatermarkGridYChange(value); if (gridSync) onWatermarkGridXChange(value); }} min={1} max={20} />
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      onClick={() => setGridSync(!gridSync)}
-                      className={`h-9 w-9 ${
-                        gridSync ? 'text-primary' : 'text-muted-foreground'
-                      }`}
-                    >
-                      {gridSync ? (
-                        <Link className="h-4 w-4" />
-                      ) : (
-                        <Unlink className="h-4 w-4" />
-                      )}
+                    <Button variant="ghost" size="icon" onClick={() => setGridSync(!gridSync)} className={`h-9 w-9 ${gridSync ? 'text-primary' : 'text-muted-foreground'}`}>
+                      {gridSync ? <Link className="h-4 w-4" /> : <Unlink className="h-4 w-4" />}
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>
-                    <p className="text-xs">
-                      {gridSync ? (
-                        <Trans>Sync adjustment</Trans>
-                      ) : (
-                        <Trans>Independent adjustment</Trans>
-                      )}
-                    </p>
-                  </TooltipContent>
+                  <TooltipContent><p className="text-xs">{gridSync ? <Trans>Sync adjustment</Trans> : <Trans>Independent adjustment</Trans>}</p></TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             </div>
           </div>
 
-          {/* Color Picker */}
-          <div className="space-y-3">
-            <Label className="text-sm font-medium leading-none">
-              <Trans>Watermark Color</Trans>
-            </Label>
-            <ColorPicker
-              value={color}
-              onChange={onColorChange}
-              aria-label="Watermark color picker"
-            />
-          </div>
-
-          {/* Font Size */}
-          <div className="space-y-3">
-            <Label className="text-sm font-medium leading-none">
-              <Trans>Font Size</Trans>
-              <span className="ml-1 text-muted-foreground">{fontSize}px</span>
-            </Label>
-            <Slider
-              value={fontSize}
-              onValueChange={onFontSizeChange}
-              min={20}
-              max={200}
-              step={1}
-              className="py-4 h-12"
-              aria-label="Font size adjustment"
-            />
-          </div>
-
-          {/* Opacity */}
-          <div className="space-y-3">
-            <Label className="text-sm font-medium leading-none">
-              <Trans>Opacity</Trans>
-              <span className="ml-1 text-muted-foreground">{opacity}%</span>
-            </Label>
-            <Slider
-              value={opacity}
-              onValueChange={onOpacityChange}
-              min={1}
-              max={100}
-              step={1}
-              className="py-4 h-12"
-              aria-label="Opacity adjustment"
-            />
-          </div>
-
-          {/* Rotation */}
-          <div className="space-y-3">
+          {/* Rotation (Common for both text and image) */}
+          <div className="space-y-3 md:col-span-2"> {/* Making rotation full width on medium screens if only one column of common controls */}
             <Label className="text-sm font-medium leading-none">
               <Trans>Rotation</Trans>
               <span className="ml-1 text-muted-foreground">{rotation}°</span>
             </Label>
-            <Slider
-              value={rotation}
-              onValueChange={onRotationChange}
-              min={0}
-              max={360}
-              step={1}
-              className="py-4 h-12"
-              aria-label="Rotation adjustment"
-            />
+            <Slider value={rotation} onValueChange={onRotationChange} min={0} max={360} step={1} className="py-4 h-12" aria-label="Rotation adjustment" />
           </div>
         </div>
       </CardContent>

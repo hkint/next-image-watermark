@@ -16,7 +16,7 @@ export function PageHeader() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex flex-col items-center text-center space-y-8">
           {/* Icon Container */}
-          <div className="p-6 bg-gradient-to-tr from-blue-100/80 to-white rounded-3xl shadow-xl shadow-blue-100/50 backdrop-blur-sm">
+          <div className="p-6 bg-gradient-to-tr from-blue-100/80 to-white rounded-2xl shadow-xl shadow-blue-100/50 backdrop-blur-sm">
             <ImageIcon className="w-20 h-20 text-blue-600" strokeWidth={1.5} />
           </div>
 

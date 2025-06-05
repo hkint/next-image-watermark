@@ -8,6 +8,22 @@ interface WatermarkOptions {
   watermarkGridX: number;
   watermarkGridY: number;
   font: string;
+  outputFormat: 'png' | 'jpeg';
+  quality: number; // For JPEG quality 0-100
+  watermarkType: 'text' | 'image';
+  watermarkImage?: string; // Data URL of the logo
+  watermarkImageOpacity?: number; // 0-100
+  watermarkImageScale?: number; // 1-100 (percentage of main image dimension)
+  // Callbacks
+  onComplete: (result: { success: boolean; dataUrl?: string; errorKey?: string; errorMessage?: string }) => void;
+}
+
+// Custom Error for canvas operations
+class CanvasError extends Error {
+  constructor(message: string, public i18nKey?: string) {
+    super(message);
+    this.name = 'CanvasError';
+  }
 }
 
 interface CanvasSize {
@@ -26,18 +42,23 @@ interface WatermarkArea {
 function createCanvas(size: CanvasSize): [HTMLCanvasElement, CanvasRenderingContext2D] {
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
-  if (!ctx) throw new Error('Failed to get canvas context');
+  if (!ctx) throw new CanvasError('Failed to get canvas context', 'canvasContextError');
 
   canvas.width = size.width;
   canvas.height = size.height;
   return [canvas, ctx];
 }
 
-// 设置水印样式
-function setWatermarkStyle(ctx: CanvasRenderingContext2D, options: WatermarkOptions) {
+// 设置文本水印样式
+function setTextWatermarkStyle(ctx: CanvasRenderingContext2D, options: WatermarkOptions) {
   ctx.fillStyle = options.color;
   ctx.font = `${options.fontSize}px ${options.font}`;
   ctx.globalAlpha = options.opacity / 100;
+}
+
+// 设置图片水印样式
+function setImageWatermarkStyle(ctx: CanvasRenderingContext2D, options: WatermarkOptions) {
+  ctx.globalAlpha = (options.watermarkImageOpacity ?? 40) / 100;
 }
 
 // 获取文本度量
@@ -50,19 +71,56 @@ function getTextMetrics(ctx: CanvasRenderingContext2D, text: string) {
   };
 }
 
+// 获取图片度量（考虑缩放）
+function getImageMetrics(
+  logoImg: HTMLImageElement,
+  canvasSize: CanvasSize,
+  options: WatermarkOptions
+): { width: number; height: number } {
+  const scale = (options.watermarkImageScale ?? 10) / 100;
+  // Scale based on the smaller dimension of the canvas to ensure logo fits
+  const baseDimension = Math.min(canvasSize.width, canvasSize.height);
+  const targetLogoHeight = baseDimension * scale;
+  const aspectRatio = logoImg.width / logoImg.height;
+
+  let scaledWidth = targetLogoHeight * aspectRatio;
+  let scaledHeight = targetLogoHeight;
+
+  if (scaledWidth > canvasSize.width * 0.8) { // Cap width to 80% of canvas
+    scaledWidth = canvasSize.width * 0.8;
+    scaledHeight = scaledWidth / aspectRatio;
+  }
+  if (scaledHeight > canvasSize.height * 0.8) { // Cap height to 80% of canvas
+    scaledHeight = canvasSize.height * 0.8;
+    scaledWidth = scaledHeight * aspectRatio;
+  }
+
+  return { width: scaledWidth, height: scaledHeight };
+}
+
+
 // 添加单个水印
 function drawSingleWatermark(
   ctx: CanvasRenderingContext2D,
-  text: string,
+  element: string | HTMLImageElement,
   x: number,
   y: number,
   rotation: number,
-  metrics: { width: number; height: number }
+  metrics: { width: number; height: number },
+  options: WatermarkOptions // Added options for type checking
 ) {
   ctx.save();
   ctx.translate(x + metrics.width / 2, y + metrics.height / 2);
   ctx.rotate((rotation * Math.PI) / 180);
-  ctx.fillText(text, -metrics.width / 2, metrics.height / 2);
+
+  if (options.watermarkType === 'image' && element instanceof HTMLImageElement) {
+    ctx.drawImage(element, -metrics.width / 2, -metrics.height / 2, metrics.width, metrics.height);
+  } else if (options.watermarkType === 'text' && typeof element === 'string') {
+    // Ensure text is centered properly after rotation
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(element, 0, 0);
+  }
   ctx.restore();
 }
 
@@ -149,10 +207,9 @@ function drawTiledWatermarksInArea(
   ctx: CanvasRenderingContext2D,
   options: WatermarkOptions,
   area: WatermarkArea,
-  metrics: { width: number; height: number }
+  metrics: { width: number; height: number },
+  element: string | HTMLImageElement
 ) {
-  // const gridX = Math.max(1, Math.floor(area.width / (metrics.width * 1.5)));
-  // const gridY = Math.max(1, Math.floor(area.height / (metrics.height * 1.5)));
   const gridX = options.watermarkGridX;
   const gridY = options.watermarkGridY;
 
@@ -163,7 +220,7 @@ function drawTiledWatermarksInArea(
     for (let j = 0; j < gridY; j++) {
       const x = area.x + (i + 0.5) * spacingX - metrics.width / 2;
       const y = area.y + (j + 0.5) * spacingY - metrics.height / 2;
-      drawSingleWatermark(ctx, options.watermark, x, y, options.rotation, metrics);
+      drawSingleWatermark(ctx, element, x, y, options.rotation, metrics, options);
     }
   }
 }
@@ -173,7 +230,8 @@ function drawTiledWatermarks(
   ctx: CanvasRenderingContext2D,
   options: WatermarkOptions,
   canvasSize: CanvasSize,
-  metrics: { width: number; height: number }
+  metrics: { width: number; height: number },
+  element: string | HTMLImageElement
 ) {
   const spacingX = canvasSize.width / options.watermarkGridX;
   const spacingY = canvasSize.height / options.watermarkGridY;
@@ -181,97 +239,210 @@ function drawTiledWatermarks(
   for (let i = 0; i < options.watermarkGridX; i++) {
     for (let j = 0; j < options.watermarkGridY; j++) {
       const x = (i + 0.5) * spacingX - metrics.width / 2;
-      const y = (j + 0.5) * spacingY + metrics.height / 2;
-      drawSingleWatermark(ctx, options.watermark, x, y, options.rotation, metrics);
+      const y = (j + 0.5) * spacingY + metrics.height / 2; // Adjusted for proper text baseline
+      drawSingleWatermark(ctx, element, x, y, options.rotation, metrics, options);
     }
   }
 }
 
-// 绘制位置水印
+// 绘制位置水印 (This function might need more complex logic for image elements if gridX > 1)
+// For simplicity, assuming gridX=1 for positioned image watermarks if tiled mode is not 'full'
 function drawPositionedWatermarks(
   ctx: CanvasRenderingContext2D,
   options: WatermarkOptions,
   canvasSize: CanvasSize,
-  metrics: { width: number; height: number }
+  metrics: { width: number; height: number },
+  element: string | HTMLImageElement
 ) {
   const padding = 5;
   const basePos = calculateBasePosition(options.position, canvasSize, metrics, padding);
-  const offsetX = options.position.includes('Right')
-    ? -metrics.width
-    : options.position.toLowerCase().includes('center')
-    ? -metrics.width / 2
-    : 0;
 
-  for (let i = 0; i < options.watermarkGridX; i++) {
-    const x =
-      basePos.x +
-      offsetX +
-      (i - Math.floor(options.watermarkGridY / 2)) * (metrics.width + padding);
-    drawSingleWatermark(ctx, options.watermark, x, basePos.y, options.rotation, metrics);
+  let x = basePos.x;
+  if (options.position.includes('Right')) {
+    x -= metrics.width;
+  } else if (options.position.toLowerCase().includes('center')) {
+    x -= metrics.width / 2;
   }
+
+  // For text, y is baseline. For image, y is top. Adjust for consistency.
+  // The current drawSingleWatermark centers the element at (x + metrics.width/2, y + metrics.height/2)
+  // So, basePos.y should be the top-left y for the bounding box of the watermark.
+  // For text, metrics.height is approx font height. drawSingleWatermark uses fillText(text, 0,0) with textBaseline middle.
+  // Let's adjust basePos.y to be the top of the text/image for positioning.
+  // drawSingleWatermark will handle centering it based on metrics.
+
+  // If it's a text watermark, adjust y for text baseline
+  // let adjustedY = basePos.y;
+  // if (options.watermarkType === 'text') {
+  //    adjustedY -= metrics.height /2; // This might need refinement based on textBaseline
+  // }
+
+  drawSingleWatermark(ctx, element, x, basePos.y - metrics.height, options.rotation, metrics, options);
 }
+
 
 // 绘制水印主函数
 function drawWatermarks(
   ctx: CanvasRenderingContext2D,
   options: WatermarkOptions,
   canvasSize: CanvasSize,
-  metrics: { width: number; height: number }
+  metrics: { width: number; height: number },
+  element: string | HTMLImageElement
 ) {
-  // 根据position确定tileMode
   const tileMode = options.position === 'tile' ? 'full' : 'area';
 
   if (tileMode === 'full') {
-    // 全图平铺
-    drawTiledWatermarks(ctx, options, canvasSize, metrics);
+    drawTiledWatermarks(ctx, options, canvasSize, metrics, element);
   } else {
-    // 区域平铺
     const area = calculateWatermarkArea(options.position, canvasSize);
-    drawTiledWatermarksInArea(ctx, options, area, metrics);
+    // If it's an image and not full tile, usually one instance in the area is enough
+    if (options.watermarkType === 'image') {
+        const x = area.x + (area.width - metrics.width) / 2;
+        const y = area.y + (area.height - metrics.height) / 2;
+        drawSingleWatermark(ctx, element, x, y, options.rotation, metrics, options);
+    } else { // For text, allow tiling within the specified area
+        drawTiledWatermarksInArea(ctx, options, area, metrics, element);
+    }
   }
 }
 
 // 处理空白画布
-export function createBlankCanvasWithWatermark(options: WatermarkOptions): string {
-  const [canvas, ctx] = createCanvas({ width: 1920, height: 1080 });
-  
-  // 填充白色背景
-  ctx.fillStyle = '#ffffff';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  
-  return drawWatermarkOnCanvas(ctx, options, { width: canvas.width, height: canvas.height });
+export function createBlankCanvasWithWatermark(options: WatermarkOptions) {
+  try {
+    const [canvas, ctx] = createCanvas({ width: 1920, height: 1080 });
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    if (options.watermarkType === 'text' && options.watermark) {
+      setTextWatermarkStyle(ctx, options);
+      const metrics = getTextMetrics(ctx, options.watermark);
+      drawWatermarks(ctx, options, { width: canvas.width, height: canvas.height }, metrics, options.watermark);
+    }
+    // Image watermarks are not drawn on blank canvas due to async nature
+
+    let dataUrl: string;
+    if (options.outputFormat === 'jpeg') {
+      dataUrl = canvas.toDataURL('image/jpeg', options.quality / 100);
+    } else {
+      dataUrl = canvas.toDataURL('image/png');
+    }
+    options.onComplete({ success: true, dataUrl });
+
+  } catch (error) {
+    console.error('Error creating blank canvas with watermark:', error);
+    if (error instanceof CanvasError) {
+      options.onComplete({ success: false, errorKey: error.i18nKey || 'canvasDrawingError', errorMessage: error.message });
+    } else if (error instanceof Error) {
+      options.onComplete({ success: false, errorKey: 'canvasDrawingError', errorMessage: error.message });
+    } else {
+      options.onComplete({ success: false, errorKey: 'canvasDrawingError', errorMessage: 'Unknown error in createBlankCanvasWithWatermark' });
+    }
+  }
 }
 
-// 在画布上绘制水印的通用函数
-function drawWatermarkOnCanvas(
-  ctx: CanvasRenderingContext2D,
-  options: WatermarkOptions,
-  canvasSize: CanvasSize
-): string {
-  setWatermarkStyle(ctx, options);
-  const metrics = getTextMetrics(ctx, options.watermark);
 
-  drawWatermarks(ctx, options, canvasSize, metrics);
-
-  return ctx.canvas.toDataURL();
-}
-
-// 处理带图片的画布
+// Main processing function
 export async function processWatermark(
-  options: WatermarkOptions & { imageUrl: string; onProcessed: (processedImage: string) => void }
+  options: WatermarkOptions & { imageUrl: string }
 ) {
-  if (!options.imageUrl) return;
+  if (!options.imageUrl) {
+    options.onComplete({ success: false, errorKey: 'mainImageLoadError', errorMessage: 'Image URL is missing.' });
+    return;
+  }
 
-  const img = new Image();
-  img.src = options.imageUrl;
-  
-  await new Promise((resolve) => {
-    img.onload = resolve;
-  });
+  let canvas: HTMLCanvasElement;
+  let ctx: CanvasRenderingContext2D;
+  let canvasSize: CanvasSize;
 
-  const [canvas, ctx] = createCanvas({ width: img.width, height: img.height });
-  ctx.drawImage(img, 0, 0);
-  
-  const result = drawWatermarkOnCanvas(ctx, options, { width: canvas.width, height: canvas.height });
-  options.onProcessed(result);
+  try {
+    const mainImage = new Image();
+    mainImage.src = options.imageUrl;
+    mainImage.crossOrigin = 'anonymous';
+
+    await new Promise((resolve, reject) => {
+      mainImage.onload = resolve;
+      mainImage.onerror = (e) => reject(new Error(`Failed to load main image: ${e.toString()}`));
+    });
+
+    [canvas, ctx] = createCanvas({ width: mainImage.width, height: mainImage.height });
+    ctx.drawImage(mainImage, 0, 0);
+    canvasSize = { width: canvas.width, height: canvas.height };
+
+  } catch (error) {
+    console.error("Error loading or drawing main image:", error);
+    const errorKey = error instanceof CanvasError ? error.i18nKey : 'mainImageLoadError';
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error loading main image';
+    options.onComplete({ success: false, errorKey, errorMessage });
+    return;
+  }
+
+  try {
+    if (options.watermarkType === 'image' && options.watermarkImage) {
+      const logoImg = new Image();
+      logoImg.src = options.watermarkImage;
+      logoImg.crossOrigin = 'anonymous';
+
+      await new Promise<void>(async (resolveLogo, rejectLogo) => {
+        logoImg.onload = () => {
+          try {
+            const originalAlpha = ctx.globalAlpha;
+            setImageWatermarkStyle(ctx, options);
+            const imageMetrics = getImageMetrics(logoImg, canvasSize, options);
+            drawWatermarks(ctx, options, canvasSize, imageMetrics, logoImg);
+            ctx.globalAlpha = originalAlpha;
+            resolveLogo();
+          } catch (drawError) {
+            rejectLogo(drawError);
+          }
+        };
+        logoImg.onerror = (e) => rejectLogo(new Error(`Failed to load logo image: ${e.toString()}`));
+      });
+    } else if (options.watermarkType === 'text' && options.watermark) {
+      setTextWatermarkStyle(ctx, options);
+      const textMetrics = getTextMetrics(ctx, options.watermark);
+      drawWatermarks(ctx, options, canvasSize, textMetrics, options.watermark);
+    }
+    // If no specific watermark type or data, the image is already on canvas.
+
+    // Final export
+    const resultUrl = canvas.toDataURL(
+      options.outputFormat === 'jpeg' ? 'image/jpeg' : 'image/png',
+      options.quality / 100
+    );
+    if (!resultUrl || resultUrl === 'data:,') { // Basic check for empty data URL
+        throw new CanvasError('Failed to export image from canvas', 'imageExportError');
+    }
+    options.onComplete({ success: true, dataUrl: resultUrl });
+
+  } catch (error) {
+    console.error('Error applying watermark or exporting:', error);
+    let errorKey = 'canvasDrawingError';
+    if (error instanceof CanvasError && error.i18nKey) {
+        errorKey = error.i18nKey;
+    } else if (error instanceof Error && error.message.includes("logo")) { // crude check
+        errorKey = 'logoImageLoadError';
+    }
+
+    // Attempt to return the canvas state before this error, if possible (e.g., main image drawn)
+    // This is tricky because the error might have left the canvas in a bad state.
+    // For logo errors, it's safer to try to export the canvas with just the main image.
+    try {
+        const fallbackUrl = canvas.toDataURL( // Try to get whatever is on canvas
+            options.outputFormat === 'jpeg' ? 'image/jpeg' : 'image/png',
+            options.quality / 100
+        );
+        options.onComplete({
+            success: false, // Still report as error overall
+            dataUrl: (fallbackUrl && fallbackUrl !== 'data:,') ? fallbackUrl : undefined, // Provide if valid
+            errorKey,
+            errorMessage: error instanceof Error ? error.message : 'Unknown processing error'
+        });
+    } catch (finalError) { // If even fallback export fails
+        options.onComplete({
+            success: false,
+            errorKey,
+            errorMessage: error instanceof Error ? error.message : 'Unknown processing error after fallback attempt'
+        });
+    }
+  }
 }

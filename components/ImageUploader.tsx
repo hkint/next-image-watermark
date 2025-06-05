@@ -4,6 +4,16 @@ import { Upload, Image as ImageIcon, ArrowRight } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle
+} from '@/components/ui/alert-dialog'
 import { toast } from 'sonner'
 import { useState } from 'react'
 import { t, Trans } from '@lingui/macro'
@@ -22,6 +32,8 @@ export function ImageUploader({
 }: ImageUploaderProps) {
   const [imageUrl, setImageUrl] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [showProxyConfirmDialog, setShowProxyConfirmDialog] = useState(false)
+  const [urlToFetchViaProxy, setUrlToFetchViaProxy] = useState('')
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -32,7 +44,9 @@ export function ImageUploader({
       }
 
       if (file.size > 10 * 1024 * 1024) {
-        toast.error(<Trans>Image size should be less than 10MB</Trans>)
+        toast.warning(
+          t(i18n)`File exceeds 10MB limit. Processing large files can cause slowdowns. The file will not be processed.`
+        )
         return
       }
 
@@ -47,21 +61,32 @@ export function ImageUploader({
     }
   }
 
-  const handleUrlUpload = async () => {
-    if (!imageUrl) {
-      toast.error(<Trans>Please enter an image URL</Trans>)
+  const executeProxyFetch = async () => {
+    if (!urlToFetchViaProxy) {
+      toast.error(<Trans>Please enter an image URL</Trans>) // Should not happen if dialog is triggered correctly
       return
     }
 
     try {
       setIsLoading(true)
-      const response = await fetch(imageUrl)
+      const encodedUrl = encodeURIComponent(urlToFetchViaProxy)
+      const response = await fetch(`/api/proxy?url=${encodedUrl}`)
 
       if (!response.ok) {
         throw new Error('Failed to fetch image')
       }
 
       const blob = await response.blob()
+
+      if (blob.size > 10 * 1024 * 1024) {
+        toast.warning(
+          t(i18n)`File exceeds 10MB limit. Processing large files can cause slowdowns. The file will not be processed.`
+        )
+        setIsLoading(false)
+        setUrlToFetchViaProxy('') // Clear the stored URL as we are not processing it
+        return
+      }
+
       if (!blob.type.startsWith('image/')) {
         throw new Error('Invalid image format')
       }
@@ -71,7 +96,7 @@ export function ImageUploader({
         const result = event.target?.result as string
         onImageChange(result)
         onImageUploaded?.()
-        setImageUrl('')
+        setImageUrl('') // Clear the input field
         toast.success(<Trans>Image loaded successfully</Trans>)
       }
       reader.readAsDataURL(blob)
@@ -79,45 +104,19 @@ export function ImageUploader({
       toast.error(<Trans>Failed to load image from URL</Trans>)
     } finally {
       setIsLoading(false)
+      setUrlToFetchViaProxy('') // Clear the stored URL
     }
   }
 
-  // Upload with proxy API to avoid CORS
-  // const handleUrlUpload = async () => {
-  //   if (!imageUrl) {
-  //     toast.error('Please enter an image URL');
-  //     return;
-  //   }
-
-  //   try {
-  //     setIsLoading(true);
-  //     const encodedUrl = encodeURIComponent(imageUrl);
-  //     const response = await fetch(`/api/proxy?url=${encodedUrl}`);
-
-  //     if (!response.ok) {
-  //       throw new Error('Failed to fetch image');
-  //     }
-
-  //     const blob = await response.blob();
-  //     if (!blob.type.startsWith('image/')) {
-  //       throw new Error('Invalid image format');
-  //     }
-
-  //     const reader = new FileReader();
-  //     reader.onload = (event) => {
-  //       const result = event.target?.result as string;
-  //       onImageChange(result);
-  //       onImageUploaded?.();
-  //       setImageUrl('');
-  //       toast.success('Image loaded successfully');
-  //     };
-  //     reader.readAsDataURL(blob);
-  //   } catch (error) {
-  //     toast.error('Failed to load image from URL');
-  //   } finally {
-  //     setIsLoading(false);
-  //   }
-  // };
+  const handleUrlUpload = async () => {
+    if (!imageUrl) {
+      toast.error(<Trans>Please enter an image URL</Trans>)
+      return
+    }
+    // Instead of direct fetch, show confirmation dialog
+    setUrlToFetchViaProxy(imageUrl)
+    setShowProxyConfirmDialog(true)
+  }
 
   const handlePaste = (e: React.ClipboardEvent) => {
     const items = e.clipboardData?.items
@@ -168,7 +167,7 @@ export function ImageUploader({
 
           <TabsContent value="upload">
             <div
-              className="relative aspect-auto bg-white rounded-xl border-2 border-dashed border-blue-200 hover:border-blue-400 transition-colors duration-200 flex items-center justify-center group cursor-pointer"
+              className="relative aspect-auto bg-white rounded-lg border-2 border-dashed border-blue-200 hover:border-blue-400 transition-colors duration-200 flex items-center justify-center group cursor-pointer"
               onPaste={handlePaste}
             >
               <div className="text-center p-6">
@@ -249,6 +248,38 @@ export function ImageUploader({
             </div>
           </TabsContent>
         </Tabs>
+
+        <AlertDialog
+          open={showProxyConfirmDialog}
+          onOpenChange={setShowProxyConfirmDialog}
+        >
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>
+                <Trans>Image Fetch Confirmation</Trans>
+              </AlertDialogTitle>
+              <AlertDialogDescription>
+                <Trans>
+                  To bypass browser limitations, this image will be fetched
+                  through our server, but we will not store your image.
+                </Trans>
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel onClick={() => setShowProxyConfirmDialog(false)}>
+                <Trans>Cancel</Trans>
+              </AlertDialogCancel>
+              <AlertDialogAction
+                onClick={() => {
+                  executeProxyFetch()
+                  setShowProxyConfirmDialog(false)
+                }}
+              >
+                <Trans>Continue</Trans>
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
       </div>
     </div>
   )
