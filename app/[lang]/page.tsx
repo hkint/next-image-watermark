@@ -68,10 +68,32 @@ export default withLinguiPage(function Home() {
         if (result.success && result.dataUrl) {
           setProcessedImage(result.dataUrl);
         } else {
-          const errorMsg = result.errorKey
-            ? t(i18n)._(result.errorKey as any) // TODO: Fix i18n typing here if Lingui macros allow direct key usage
-            : result.errorMessage || t(i18n)._('defaultImageProcessingError' as any);
-          toast.error(errorMsg);
+          let errorToDisplay: string;
+          if (result.errorKey) {
+            switch (result.errorKey) {
+              case 'canvasContextError':
+                errorToDisplay = t(i18n)._('canvasContextError');
+                break;
+              case 'mainImageLoadError':
+                errorToDisplay = t(i18n)._('mainImageLoadError');
+                break;
+              case 'logoImageLoadError':
+                errorToDisplay = t(i18n)._('logoImageLoadError');
+                break;
+              case 'canvasDrawingError':
+                errorToDisplay = t(i18n)._('canvasDrawingError');
+                break;
+              case 'imageExportError':
+                errorToDisplay = t(i18n)._('imageExportError');
+                break;
+              default:
+                errorToDisplay = result.errorMessage || result.errorKey || t(i18n)._('defaultImageProcessingError');
+            }
+          } else {
+            errorToDisplay = result.errorMessage || t(i18n)._('defaultImageProcessingError');
+          }
+          toast.error(errorToDisplay);
+
           if (result.dataUrl) { // E.g. logo failed but main image processed
             setProcessedImage(result.dataUrl);
           }
